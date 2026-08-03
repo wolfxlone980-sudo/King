@@ -15,5 +15,34 @@ function checkPassword() {
 }
 
 function openEnvelope() {
-    alert("To Be Continued ❤️");
+    document.getElementById("envelopePage").style.display = "none";
+    document.getElementById("letterPage").style.display = "flex";
+    startLetter();
+}
+
+const lines = [
+    "Hey tui... ❤️",
+    "Haa... tokei bolchi. 😊",
+    "Aj tor Birthday... 🎂",
+    "Hoyto vabchis...",
+    "Eta sudhu ekta website...",
+    "But trust me...",
+    "Eta ami sudhu tor jonnoi baniyechi. ❤️"
+];
+
+let line = 0;
+
+function startLetter() {
+    line = 0;
+    document.getElementById("typewriter").innerHTML = "";
+    showNextLine();
+}
+
+function showNextLine() {
+    if (line >= lines.length) return;
+
+    document.getElementById("typewriter").innerHTML += lines[line] + "<br><br>";
+    line++;
+
+    setTimeout(showNextLine, 1800);
 }
