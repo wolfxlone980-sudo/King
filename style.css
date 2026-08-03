@@ -280,3 +280,22 @@ width:90%;
     line-height:38px;
     white-space:pre-line;
 }
+/* Continue Button */
+
+#nextChapterBtn{
+    display:none;
+    margin:40px auto 0;
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff4fa3;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#nextChapterBtn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #ff4fa3;
+}
