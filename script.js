@@ -21,13 +21,23 @@ function openEnvelope() {
 }
 
 const lines = [
-    "Hey tui... ❤️",
-    "Haa... tokei bolchi. 😊",
-    "Aj tor Birthday... 🎂",
-    "Hoyto vabchis...",
-    "Eta sudhu ekta website...",
-    "But trust me...",
-    "Eta ami sudhu tor jonnoi baniyechi. ❤️"
+
+"Hey tui... ❤️",
+
+"Haa... tokei bolchi. 😊",
+
+"Aj tor Birthday... 🎂",
+
+"Hoyto vabchis...",
+
+"Eta sudhu ekta website na...",
+
+"Eta amar tor jonno banano ekta chotto surprise. 🤍",
+
+"Tai aste aste por...",
+
+"Karon ekhono onek kichu baki ache... ✨"
+
 ];
 
 let line = 0;
