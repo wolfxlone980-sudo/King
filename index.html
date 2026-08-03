@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Surprise ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Hearts -->
+    <div class="hearts"></div>
+
+    <!-- Gift Box -->
+    <div id="giftContainer">
+        <h1>🎁</h1>
+        <p>Click the Gift</p>
+        <button onclick="openGift()">Open</button>
+    </div>
+
+    <!-- Password Section -->
+    <div id="passwordBox" class="hidden">
+        <h2>🔐 Enter Passcode</h2>
+        <input type="password" id="pass" placeholder="Passcode">
+        <br><br>
+        <button onclick="checkPass()">Unlock</button>
+    </div>
+
+    <!-- Letter -->
+    <div id="letter" class="hidden">
+
+        <h1>❤️ For You ❤️</h1>
+
+        <p id="message">
+            Hello...
+
+            Maybe I don't always say everything I feel.
+
+            But I want you to know something...
+
+            You are one of the most special people in my life.
+
+            Your smile makes everything brighter.
+
+            Thank you for being with me.
+
+            I hope your every dream comes true.
+
+            Keep smiling forever.
+
+            ❤️
+        </p>
+
+        <button onclick="showFinal()">Open Final Surprise</button>
+
+    </div>
+
+    <!-- Final -->
+    <div id="final" class="hidden">
+        <h1>✨ You Are Amazing ✨</h1>
+
+        <h2>❤️ Stay Happy Forever ❤️</h2>
+
+        <p>
+            This little surprise was made only for you.
+        </p>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
