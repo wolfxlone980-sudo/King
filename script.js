@@ -6,7 +6,7 @@ function openGift() {
 function checkPass() {
     let pass = document.getElementById("pass").value.toLowerCase().trim();
 
-    if (pass === "2june") {
+    if (pass === "favourite chapter") {
         document.getElementById("passwordBox").classList.add("hidden");
         document.getElementById("letter").classList.remove("hidden");
     } else {
