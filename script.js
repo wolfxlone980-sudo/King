@@ -17,27 +17,21 @@ function checkPassword() {
 function openEnvelope() {
     document.getElementById("envelopePage").style.display = "none";
     document.getElementById("letterPage").style.display = "flex";
+
+    document.getElementById("nextChapterBtn").style.display = "none";
+
     startLetter();
 }
 
 const lines = [
-
-"Hey tui... ❤️",
-
-"Haa... tokei bolchi. 😊",
-
-"Aj tor Birthday... 🎂",
-
-"Hoyto vabchis...",
-
-"Eta sudhu ekta website na...",
-
-"Eta amar tor jonno banano ekta chotto surprise. 🤍",
-
-"Tai aste aste por...",
-
-"Karon ekhono onek kichu baki ache... ✨"
-
+    "Hey tui... ❤️",
+    "Haa... tokei bolchi. 😊",
+    "Aj tor Birthday... 🎂",
+    "Hoyto vabchis...",
+    "Eta sudhu ekta website na...",
+    "Eta amar tor jonno banano ekta chotto surprise. 🤍",
+    "Tai aste aste por...",
+    "Golpota ekhono shesh hoyni... ✨"
 ];
 
 let line = 0;
@@ -50,7 +44,10 @@ function startLetter() {
 
 function showNextLine() {
 
-    if (line >= lines.length) return;
+    if (line >= lines.length) {
+        document.getElementById("nextChapterBtn").style.display = "block";
+        return;
+    }
 
     let text = lines[line];
     let i = 0;
@@ -71,10 +68,14 @@ function showNextLine() {
 
             line++;
 
-            setTimeout(showNextLine,1200);
+            setTimeout(showNextLine, 1200);
 
         }
 
-    },50);
+    }, 50);
 
+}
+
+function goToChapter2() {
+    alert("🚧 Chapter 2 is coming soon ❤️");
 }
