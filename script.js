@@ -49,10 +49,32 @@ function startLetter() {
 }
 
 function showNextLine() {
+
     if (line >= lines.length) return;
 
-    document.getElementById("typewriter").innerHTML += lines[line] + "<br><br>";
-    line++;
+    let text = lines[line];
+    let i = 0;
 
-    setTimeout(showNextLine, 1800);
+    let box = document.getElementById("typewriter");
+
+    let typing = setInterval(() => {
+
+        box.innerHTML += text.charAt(i);
+
+        i++;
+
+        if (i >= text.length) {
+
+            clearInterval(typing);
+
+            box.innerHTML += "<br><br>";
+
+            line++;
+
+            setTimeout(showNextLine,1200);
+
+        }
+
+    },50);
+
 }
