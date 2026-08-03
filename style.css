@@ -298,4 +298,11 @@ width:90%;
 #nextChapterBtn:hover{
     transform:scale(1.05);
     box-shadow:0 0 20px #ff4fa3;
+.paper{
+    display:flex;
+    flex-direction:column;
+}
+
+#nextChapterBtn{
+    align-self:center;
 }
