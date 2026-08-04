@@ -259,40 +259,48 @@ function startChapter2() {
 
 function showChapter2Line() {
 
-    const box = document
-        .getElementById("chapter2Story");
-
-    const btn = document
-        .getElementById("chapter2NextBtn");
-
+    const box = document.getElementById("chapter2Story");
+    const btn = document.getElementById("chapter2NextBtn");
 
     if (chapter2Line >= chapter2Lines.length) {
 
-        btn.innerHTML =
-            "📖 Continue to Chapter 3";
-
+        btn.innerHTML = "📖 Continue to Chapter 3";
         btn.onclick = goToChapter3;
 
         return;
-
     }
 
+    let text = chapter2Lines[chapter2Line];
 
     box.innerHTML = `
-        <div class="chapterStoryText">
-            ${chapter2Lines[chapter2Line]}
-        </div>
+        <div class="chapterStoryText"></div>
     `;
 
+    const textBox = box.querySelector(".chapterStoryText");
 
-    chapter2Line++;
+    let i = 0;
 
+    btn.style.display = "none";
 
-    btn.style.display = "inline-block";
+    let typing = setInterval(function() {
 
-    btn.innerHTML = "Continue ✨";
+        textBox.innerHTML += text.charAt(i);
 
-    btn.onclick = showChapter2Line;
+        i++;
+
+        if (i >= text.length) {
+
+            clearInterval(typing);
+
+            chapter2Line++;
+
+            btn.innerHTML = "Continue ✨";
+            btn.style.display = "inline-block";
+            btn.onclick = showChapter2Line;
+
+        }
+
+    }, 45);
 
 }
 
