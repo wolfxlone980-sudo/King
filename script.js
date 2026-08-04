@@ -1,41 +1,85 @@
-function nextPage() {
-    document.getElementById("welcome").style.display = "none";
-    document.getElementById("passwordPage").style.display = "flex";
+function showPage(pageId) {
+
+    const pages = [
+        "welcome",
+        "passwordPage",
+        "envelopePage",
+        "letterPage"
+    ];
+
+    pages.forEach(function(id) {
+        const page = document.getElementById(id);
+
+        if (page) {
+            page.classList.add("hidden");
+        }
+    });
+
+    const selectedPage = document.getElementById(pageId);
+
+    if (selectedPage) {
+        selectedPage.classList.remove("hidden");
+    }
 }
 
 
+/* =========================
+   Welcome → Password
+========================= */
+
+function nextPage() {
+
+    showPage("passwordPage");
+
+}
+
+
+/* =========================
+   Password Check
+========================= */
+
 function checkPassword() {
 
-    let pass = document
-        .getElementById("password")
-        .value
-        .toLowerCase()
-        .trim();
+    const input = document.getElementById("password");
+
+    const pass = input.value.toLowerCase().trim();
 
     if (pass === "favourite chapter") {
 
-        document.getElementById("passwordPage").style.display = "none";
-        document.getElementById("envelopePage").style.display = "flex";
+        showPage("envelopePage");
 
     } else {
 
         alert("Wrong Password 💔");
 
+        input.value = "";
+
+        input.focus();
+
     }
 }
 
 
+/* =========================
+   Envelope → Letter
+========================= */
+
 function openEnvelope() {
 
-    document.getElementById("envelopePage").style.display = "none";
-    document.getElementById("letterPage").style.display = "flex";
+    showPage("letterPage");
 
-    document.getElementById("nextChapterBtn").style.display = "none";
+    const button = document.getElementById("nextChapterBtn");
+
+    button.style.display = "none";
 
     startLetter();
 
 }
 
+
+/* =========================
+   Birthday Letter
+========================= */
 
 const lines = [
 
@@ -65,12 +109,18 @@ function startLetter() {
 
     line = 0;
 
-    document.getElementById("typewriter").innerHTML = "";
+    const box = document.getElementById("typewriter");
+
+    box.innerHTML = "";
 
     showNextLine();
 
 }
 
+
+/* =========================
+   Typewriter
+========================= */
 
 function showNextLine() {
 
@@ -78,7 +128,13 @@ function showNextLine() {
 
         setTimeout(function() {
 
-            document.getElementById("nextChapterBtn").style.display = "block";
+            const button =
+                document.getElementById("nextChapterBtn");
+
+            button.style.display = "block";
+
+            button.style.animation =
+                "buttonAppear 1s ease";
 
         }, 500);
 
@@ -86,14 +142,14 @@ function showNextLine() {
     }
 
 
-    let text = lines[line];
+    const text = lines[line];
 
     let i = 0;
 
-    let box = document.getElementById("typewriter");
+    const box = document.getElementById("typewriter");
 
 
-    let typing = setInterval(function() {
+    const typing = setInterval(function() {
 
         box.innerHTML += text.charAt(i);
 
@@ -117,8 +173,23 @@ function showNextLine() {
 }
 
 
+/* =========================
+   Chapter 2
+========================= */
+
 function goToChapter2() {
 
     alert("Chapter 2 is coming soon ❤️");
 
 }
+
+
+/* =========================
+   Start Website
+========================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    showPage("welcome");
+
+});
