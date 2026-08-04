@@ -185,53 +185,65 @@ const chapter2Lines = [
 
     "Our story didn't really start with a beautiful moment... 🤍",
 
-    "বরং শুরু হয়েছিল একটা classroom আর একটা ছোট্ট ঝগড়া দিয়ে। 😬",
+    "বরং শুরুটা হয়েছিল একটা classroom-এ... আর একটা ছোট্ট ঝগড়া দিয়ে। 😬",
 
-    "সেদিন হয়তো ভাবিনি, এই মানুষটাই একদিন আমার জীবনের এতটা কাছের একজন হয়ে যাবে।",
+    "সেদিন কে জানত, ওই মানুষটার সাথেই একদিন এত কথা জমে থাকবে... এত memories তৈরি হবে।",
 
-    "তখন আমরা খুব close ছিলাম না... friend বললেও হয়তো একটু বেশি বলা হয়ে যেত।",
+    "At that time, we weren't even close... সত্যি বলতে, friend বললেও হয়তো একটু বেশি বলা হয়ে যেত।",
 
     "Then came 28 November 2023... ✨",
 
-    "একটা simple video... একটা comment... আর সেখান থেকেই আবার শুরু হলো কথা বলা।",
+    "একটা simple video-তে তোর একটা comment... আর somehow, সেখান থেকেই আবার আমাদের কথা শুরু হলো।",
 
-    "তারপর একদিন সে আমাকে তার number দিতে চাইল।",
+    "কথা বলতে বলতে একসময় তুই আমাকে তোর number দিতে চাইলি।",
 
-    "But TikTok had other plans! 😭😂",
+    "But TikTok-এর privacy তখন আমাদের একটু পরীক্ষা নিতে চেয়েছিল। 😭😂",
 
-    "তাই privacy-এর কারণে number সরাসরি দেওয়া সম্ভব না হওয়ায় তার legendary solution ছিল—",
+    "তাই numberটা সরাসরি দেখাতে না পেরে তুই যেভাবে দিলি...",
 
     "\"zero one seven\" 😁",
 
-    "Honestly... তার এই বুদ্ধি দেখে আমি একটু অবাকই হয়েছিলাম। 😂❤️",
+    "সত্যি বলছি, তোর ওই বুদ্ধি দেখে আমি সেদিন একটু অবাকই হয়েছিলাম। 😂❤️",
 
-    "তারপর কয়েক মাস ধরে চলল আমাদের endless conversations...",
+    "তারপর... একটার পর একটা দিন চলে গেল।",
 
-    "কিন্তু গল্পটা তখনও পুরোপুরি লেখা হয়নি...",
+    "কথা বাড়তে থাকল, রাতগুলো একটু একটু করে ছোট হতে থাকল... আর অজান্তেই তুই হয়ে উঠলি আমার পরিচিত মানুষগুলোর মধ্যে একটু আলাদা একজন।",
 
-    "27 April 2024... হঠাৎ করেই সবকিছু যেন থেমে গেল। 💔",
+    "But then... 27 April 2024. 💔",
 
-    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি।",
+    "হঠাৎ করেই তুই হারিয়ে গেলি।",
 
-    "সময় চলে গেল। অনেক কিছু বদলে গেল।",
+    "কোনো proper goodbye ছিল না... কোনো explanation-ও না।",
 
-    "But maybe... the story wasn't meant to end there.",
+    "আমি তোকে খুঁজেছি... কিন্তু কোথাও পেলাম না।",
+
+    "সময় চলে গেল। Days became months... আর আমি ভেবেছিলাম, হয়তো গল্পটা এখানেই শেষ।",
+
+    "But some stories don't end when we think they do...",
 
     "Because then came 2 June 2025. ✨",
 
-    "একদিন হঠাৎ... an unknown number texted me.",
+    "একদিন হঠাৎ... an unknown number থেকে একটা message এলো।",
 
-    "আর সেই unknown number-এর ওপাশে ছিল... সে। ❤️",
+    "আর message-এর ওপাশে ছিলি... তুই। ❤️",
 
-    "তারপর থেকে... we never really lost contact again.",
+    "কী অদ্ভুত না? এতদিন পরেও somehow, we found our way back to each other.",
 
-    "And maybe that's the beautiful part...",
+    "তারপর থেকে আবার কথা... আবার সেই পরিচিত feeling... আর এবার গল্পটা আর হারিয়ে যায়নি।",
 
-    "কিছু মানুষ আমাদের জীবনে হঠাৎ আসে, আবার হঠাৎ হারিয়েও যায়...",
+    "Maybe that's what makes our story a little different...",
 
-    "কিন্তু যদি গল্পটা সত্যিই তাদের নিয়ে হয়...",
+    "কিছু মানুষ জীবনে আসে খুব quietly...",
 
-    "somehow, they find their way back. 🤍"
+    "কিছুদিন থাকে... তারপর হারিয়ে যায়...",
+
+    "কিন্তু যদি তারা সত্যিই important হয়, somehow life তাদের আবার ফিরিয়ে আনে। 🤍",
+
+    "And maybe... that's exactly what happened with us.",
+
+    "কিন্তু জানিস তো... এই গল্পটা এখানেও শেষ হয়নি।",
+
+    "Because the best part of our story... is still being written. ❤️"
 
 ];
 
