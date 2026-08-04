@@ -1,3 +1,7 @@
+/* =========================
+   HIDE ALL PAGES
+========================= */
+
 function hideAllPages() {
 
     document.getElementById("welcome").classList.add("hidden");
@@ -5,7 +9,10 @@ function hideAllPages() {
     document.getElementById("envelopePage").classList.add("hidden");
     document.getElementById("letterPage").classList.add("hidden");
     document.getElementById("chapter2").classList.add("hidden");
+    document.getElementById("chapter3").classList.add("hidden");
     document.getElementById("finalChapter").classList.add("hidden");
+    document.getElementById("birthdayReveal").classList.add("hidden");
+    document.getElementById("ultimateEnding").classList.add("hidden");
 
 }
 
@@ -55,7 +62,7 @@ function checkPassword() {
 
 
 /* =========================
-   ENVELOPE → LETTER
+   ENVELOPE → CHAPTER 1
 ========================= */
 
 function openEnvelope() {
@@ -76,7 +83,7 @@ function openEnvelope() {
 
 
 /* =========================
-   CHAPTER 1 LETTER
+   CHAPTER 1
 ========================= */
 
 const lines = [
@@ -131,13 +138,12 @@ function showNextLine() {
 
     }
 
-
     let text = lines[line];
 
     let i = 0;
 
-    let box = document
-        .getElementById("typewriter");
+    let box =
+        document.getElementById("typewriter");
 
 
     let typing = setInterval(function() {
@@ -145,7 +151,6 @@ function showNextLine() {
         box.innerHTML += text.charAt(i);
 
         i++;
-
 
         if (i >= text.length) {
 
@@ -176,12 +181,15 @@ function goToChapter2() {
         .getElementById("chapter2")
         .classList.remove("hidden");
 
+    startChapter2();
+
 }
 
 
 /* =========================
-   CHAPTER 2 STORY
+   CHAPTER 2
 ========================= */
+
 const chapter2Lines = [
 
     "Our story didn't really start with a beautiful moment... 🤍",
@@ -251,8 +259,6 @@ const chapter2Lines = [
 let chapter2Line = 0;
 
 
-/* Open Chapter 2 */
-
 function startChapter2() {
 
     chapter2Line = 0;
@@ -266,74 +272,108 @@ function startChapter2() {
 }
 
 
-/* Show Next Chapter 2 Line */
-
 function showChapter2Line() {
 
-    const box = document.getElementById("chapter2Story");
-    const btn = document.getElementById("chapter2NextBtn");
+    const box =
+        document.getElementById("chapter2Story");
+
+    const btn =
+        document.getElementById("chapter2NextBtn");
+
 
     if (chapter2Line >= chapter2Lines.length) {
 
-        btn.innerHTML = "📖 Continue to Chapter 3";
-        btn.onclick = goToChapter3;
+        btn.innerHTML =
+            "📖 Continue to Chapter 3";
+
+        btn.style.display =
+            "inline-block";
+
+        btn.onclick =
+            goToChapter3;
 
         return;
+
     }
 
-    let text = chapter2Lines[chapter2Line];
+
+    let text =
+        chapter2Lines[chapter2Line];
+
 
     let specialClass = "";
 
-if (text.includes("28 November 2023")) {
-    specialClass = "dateMoment";
-}
 
-if (text.includes("27 April 2024")) {
-    specialClass = "sadMoment";
-}
+    if (text.includes("28 November 2023")) {
 
-if (text.includes("2 June 2025")) {
-    specialClass = "returnMoment";
-}
+        specialClass = "dateMoment";
 
-box.innerHTML = `
-    <div class="chapterStoryText ${specialClass}"></div>
+    }
+
+
+    if (text.includes("27 April 2024")) {
+
+        specialClass = "sadMoment";
+
+    }
+
+
+    if (text.includes("2 June 2025")) {
+
+        specialClass = "returnMoment";
+
+    }
+
+
+    box.innerHTML = `
+        <div class="chapterStoryText ${specialClass}"></div>
     `;
 
-    const textBox = box.querySelector(".chapterStoryText");
+
+    const textBox =
+        box.querySelector(".chapterStoryText");
+
 
     let i = 0;
 
-    btn.style.display = "none";
+    btn.style.display =
+        "none";
 
-    let typing = setInterval(function() {
 
-        textBox.innerHTML += text.charAt(i);
+    let typing =
+        setInterval(function() {
 
-        i++;
+            textBox.innerHTML +=
+                text.charAt(i);
 
-        if (i >= text.length) {
+            i++;
 
-            clearInterval(typing);
 
-            chapter2Line++;
+            if (i >= text.length) {
 
-            btn.innerHTML = "Continue ✨";
-            btn.style.display = "inline-block";
-            btn.onclick = showChapter2Line;
+                clearInterval(typing);
 
-        }
+                chapter2Line++;
 
-    }, 45);
+                btn.innerHTML =
+                    "Continue ✨";
+
+                btn.style.display =
+                    "inline-block";
+
+                btn.onclick =
+                    showChapter2Line;
+
+            }
+
+        }, 45);
 
 }
 
 
 /* =========================
-   CHAPTER 3
+   CHAPTER 2 → CHAPTER 3
 ========================= */
-
 
 function goToChapter3() {
 
@@ -347,19 +387,7 @@ function goToChapter3() {
 
 }
 
-/* =========================
-   START WEBSITE
-========================= */
 
-window.addEventListener("load", function() {
-
-    hideAllPages();
-
-    document
-        .getElementById("welcome")
-        .classList.remove("hidden");
-
-});
 /* =========================
    CHAPTER 3
 ========================= */
@@ -397,8 +425,6 @@ const chapter3Lines = [
 let chapter3Line = 0;
 
 
-/* Chapter 3 Start */
-
 function startChapter3() {
 
     chapter3Line = 0;
@@ -416,80 +442,95 @@ function startChapter3() {
 }
 
 
-/* Chapter 3 Typing */
-
 function showNextChapter3Line() {
 
-    const box = document
-        .getElementById("chapter3Story");
+    const box =
+        document.getElementById("chapter3Story");
 
-    const btn = document
-        .getElementById("chapter3NextBtn");
+    const btn =
+        document.getElementById("chapter3NextBtn");
 
 
     if (chapter3Line >= chapter3Lines.length) {
 
-        btn.innerHTML = "💌 Continue to Final Chapter";
+        btn.innerHTML =
+            "💌 Continue to Final Chapter";
 
-        btn.style.display = "inline-block";
+        btn.style.display =
+            "inline-block";
 
-        btn.onclick = goToFinalChapter;
+        btn.onclick =
+            goToFinalChapter;
 
         return;
 
     }
 
 
-    let text = chapter3Lines[chapter3Line];
+    let text =
+        chapter3Lines[chapter3Line];
+
 
     let i = 0;
 
     box.innerHTML = "";
 
-    btn.style.display = "none";
+    btn.style.display =
+        "none";
 
 
-    let typing = setInterval(function() {
+    let typing =
+        setInterval(function() {
 
-        box.innerHTML += text.charAt(i);
+            box.innerHTML +=
+                text.charAt(i);
 
-        i++;
+            i++;
 
 
-        if (i >= text.length) {
+            if (i >= text.length) {
 
-            clearInterval(typing);
+                clearInterval(typing);
 
-            chapter3Line++;
+                chapter3Line++;
 
-            btn.innerHTML = "Continue ✨";
+                btn.innerHTML =
+                    "Continue ✨";
 
-            btn.style.display = "inline-block";
+                btn.style.display =
+                    "inline-block";
 
-            btn.onclick = showNextChapter3Line;
+                btn.onclick =
+                    showNextChapter3Line;
 
-        }
+            }
 
-    }, 45);
+        }, 45);
 
 }
 
 
-/* Chapter 3 → Final Chapter */
+/* =========================
+   CHAPTER 3 → FINAL
+========================= */
 
 function goToFinalChapter() {
 
     hideAllPages();
 
-    const finalPage = document.getElementById("finalChapter");
+    const finalPage =
+        document.getElementById("finalChapter");
 
     finalPage.classList.remove("hidden");
 
-    finalPage.style.display = "flex";
+    finalPage.style.display =
+        "flex";
 
 }
+
+
 /* =========================
-   FINAL CHAPTER EXPERIENCE
+   FINAL CHAPTER
 ========================= */
 
 const birthdayLines = [
@@ -513,7 +554,7 @@ const birthdayLines = [
 let birthdayLine = 0;
 
 
-/* Open Final Surprise */
+/* Final → Birthday Reveal */
 
 function openFinalSurprise() {
 
@@ -525,27 +566,36 @@ function openFinalSurprise() {
         .getElementById("birthdayReveal")
         .classList.remove("hidden");
 
+    document
+        .getElementById("birthdayReveal")
+        .style.display = "flex";
+
+
     birthdayLine = 0;
+
 
     document
         .getElementById("birthdayMessage")
         .innerHTML = "";
 
+
     document
         .getElementById("oneMoreBtn")
         .style.display = "none";
+
 
     showBirthdayLine();
 
 }
 
 
-/* Birthday Typewriter */
+/* Birthday Typing */
 
 function showBirthdayLine() {
 
     const box =
         document.getElementById("birthdayMessage");
+
 
     if (birthdayLine >= birthdayLines.length) {
 
@@ -553,7 +603,8 @@ function showBirthdayLine() {
 
             document
                 .getElementById("oneMoreBtn")
-                .style.display = "inline-block";
+                .style.display =
+                "inline-block";
 
         }, 700);
 
@@ -562,36 +613,44 @@ function showBirthdayLine() {
     }
 
 
-    let text = birthdayLines[birthdayLine];
+    let text =
+        birthdayLines[birthdayLine];
 
     let i = 0;
 
     box.innerHTML = "";
 
 
-    let typing = setInterval(function() {
+    let typing =
+        setInterval(function() {
 
-        box.innerHTML += text.charAt(i);
+            box.innerHTML +=
+                text.charAt(i);
 
-        i++;
+            i++;
 
 
-        if (i >= text.length) {
+            if (i >= text.length) {
 
-            clearInterval(typing);
+                clearInterval(typing);
 
-            birthdayLine++;
+                birthdayLine++;
 
-            setTimeout(showBirthdayLine, 900);
+                setTimeout(
+                    showBirthdayLine,
+                    900
+                );
 
-        }
+            }
 
-    }, 45);
+        }, 45);
 
 }
 
 
-/* One More Thing */
+/* =========================
+   FINAL MESSAGE
+========================= */
 
 function showFinalMessage() {
 
@@ -599,9 +658,14 @@ function showFinalMessage() {
         .getElementById("birthdayReveal")
         .classList.add("hidden");
 
-    document
-        .getElementById("ultimateEnding")
-        .classList.remove("hidden");
+
+    const ending =
+        document.getElementById("ultimateEnding");
+
+    ending.classList.remove("hidden");
+
+    ending.style.display =
+        "flex";
 
 
     const box =
@@ -610,38 +674,54 @@ function showFinalMessage() {
 
     box.innerHTML = `
 
-        I don't know what the future holds for us...
+I don't know what the future holds for us...
 
-        But I'm really glad that,
-        somehow, our paths crossed again. 🤍
+But I'm really glad that,
+somehow, our paths crossed again. 🤍
 
-        From a classroom argument
-        to endless midnight conversations...
+From a classroom argument
+to endless midnight conversations...
 
-        what a beautiful little journey
-        it has been.
+what a beautiful little journey
+it has been.
 
-        And if I could wish one thing for you today...
+And if I could wish one thing for you today...
 
-        I'd wish that life gives you
-        the same happiness you've unknowingly
-        brought into mine. ❤️
+I'd wish that life gives you
+the same happiness you've unknowingly
+brought into mine. ❤️
 
-        Happy Birthday, Suma. 🎂🌸
+Happy Birthday, Suma. 🎂🌸
 
-        This whole little world you just walked through...
+This whole little world you just walked through...
 
-        was made just for you. ❤️
+was made just for you. ❤️
 
-        21 August —
-        your day, and now a little special to me too.
+21 August —
+your day, and now a little special to me too.
 
-        Stay happy.
-        Stay crazy.
-        Stay exactly the way you are. 🤍
+Stay happy.
+Stay crazy.
+Stay exactly the way you are. 🤍
 
-        — From someone who's really glad
-        you found your way back.
+— From someone who's really glad
+you found your way back.
+
     `;
 
 }
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+window.addEventListener("load", function() {
+
+    hideAllPages();
+
+    document
+        .getElementById("welcome")
+        .classList.remove("hidden");
+
+});
