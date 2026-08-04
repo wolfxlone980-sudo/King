@@ -305,8 +305,9 @@ function goToChapter3(){
     alert("Chapter 3 is coming soon ❤️");
 
 }
+
 // =========================
-// CHAPTER 2 STORY
+// CHAPTER 2 STORY - FINAL
 // =========================
 
 const chapter2Lines = [
@@ -364,62 +365,48 @@ const chapter2Lines = [
 ];
 
 let chapter2Line = 0;
-let chapter2Typing = null;
 
 
+// Open Chapter 2
 function startChapter2(){
 
     chapter2Line = 0;
 
-    document.getElementById("chapter2Story").innerHTML = "";
-
-    showNextChapter2Line();
+    showChapter2Line();
 
 }
 
 
-function showNextChapter2Line(){
+// Show one line
+function showChapter2Line(){
 
-    if(chapter2Typing){
-        clearInterval(chapter2Typing);
-    }
+    const box = document.getElementById("chapter2Story");
+
+    const btn = document.getElementById("chapter2NextBtn");
 
     if(chapter2Line >= chapter2Lines.length){
-
-        let btn = document.getElementById("chapter2NextBtn");
 
         btn.innerHTML = "📖 Continue to Chapter 3";
 
         btn.onclick = goToChapter3;
 
         return;
+
     }
 
-    let text = chapter2Lines[chapter2Line];
+    box.innerHTML = `
+        <div class="chapterStoryText">
+            ${chapter2Lines[chapter2Line]}
+        </div>
+    `;
 
-    let box = document.getElementById("chapter2Story");
+    chapter2Line++;
 
-    box.innerHTML = "";
+    btn.style.display = "inline-block";
 
-    let i = 0;
+    btn.innerHTML = "Continue ✨";
 
-    chapter2Typing = setInterval(function(){
-
-        box.innerHTML += text.charAt(i);
-
-        i++;
-
-        if(i >= text.length){
-
-            clearInterval(chapter2Typing);
-
-            chapter2Typing = null;
-
-            chapter2Line++;
-
-        }
-
-    },45);
+    btn.onclick = showChapter2Line;
 
 }
 
@@ -429,3 +416,5 @@ function goToChapter3(){
     alert("Chapter 3 is coming soon ❤️");
 
 }
+
+
