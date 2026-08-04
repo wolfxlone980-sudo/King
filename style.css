@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
@@ -13,24 +13,34 @@ html,body{
 }
 
 body{
-    background:linear-gradient(to bottom,#020111,#090a1a,#111827);
-    color:white;
+    min-height:100vh;
     overflow-x:hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,79,163,.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(130,80,255,.12), transparent 30%),
+        linear-gradient(135deg,#020111,#08091a,#11152b);
+    color:white;
 }
 
-/* Hidden */
+/* =========================
+   HIDDEN
+========================= */
 
 .hidden{
     display:none !important;
 }
 
-/* Stars */
+
+/* =========================
+   STARS
+========================= */
 
 .stars{
     position:fixed;
     inset:0;
     width:100%;
     height:100%;
+
     background-image:
         radial-gradient(white 1px,transparent 1px),
         radial-gradient(white 1px,transparent 1px),
@@ -39,14 +49,34 @@ body{
     background-size:
         120px 120px,
         180px 180px,
-        250px 250px;
+        260px 260px;
 
-    animation:moveStars 60s linear infinite;
-    opacity:.8;
+    background-position:
+        0 0,
+        40px 70px,
+        100px 30px;
+
+    animation:moveStars 70s linear infinite;
+
+    opacity:.65;
     pointer-events:none;
+    z-index:0;
 }
 
-/* Welcome */
+@keyframes moveStars{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-250px);
+    }
+}
+
+
+/* =========================
+   WELCOME
+========================= */
 
 #welcome{
     width:100%;
@@ -58,145 +88,577 @@ body{
     flex-direction:column;
 
     text-align:center;
-    padding:20px;
+    padding:25px;
 
     position:relative;
     z-index:2;
 
-    animation:fadeIn 2s;
+    animation:fadeIn 1.5s ease;
 }
 
 #welcome h3{
     color:#ffd369;
-    margin-bottom:15px;
+    font-size:18px;
     font-weight:400;
+    letter-spacing:1px;
+    margin-bottom:18px;
 }
 
 #welcome h1{
-    font-size:55px;
-    margin-bottom:20px;
-    text-shadow:0 0 20px #ff4fa3;
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:25px;
+
+    background:linear-gradient(90deg,#fff,#ff72b6,#fff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 15px rgba(255,79,163,.5),
+        0 0 35px rgba(255,79,163,.25);
 }
 
 #welcome p{
     max-width:650px;
-    line-height:35px;
-    font-size:20px;
-    color:#d8d8d8;
+
+    color:#dedee8;
+
+    font-size:19px;
+    line-height:36px;
+
+    letter-spacing:.3px;
 }
 
-/* Button */
+#welcome p b{
+    color:white;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
 
 button{
     margin-top:40px;
 
-    padding:15px 40px;
+    padding:16px 42px;
 
     border:none;
-    border-radius:40px;
+    border-radius:50px;
 
-    background:#ff4fa3;
+    background:linear-gradient(
+        135deg,
+        #ff4fa3,
+        #ff2f91
+    );
+
     color:white;
 
     font-size:18px;
+    font-weight:500;
 
     cursor:pointer;
 
-    transition:.4s;
+    box-shadow:
+        0 8px 25px rgba(255,79,163,.35),
+        0 0 20px rgba(255,79,163,.2);
+
+    transition:.35s;
 }
 
 button:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px #ff4fa3;
+    transform:translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 35px rgba(255,79,163,.5),
+        0 0 30px rgba(255,79,163,.35);
 }
 
-/* Common Pages */
+
+/* =========================
+   COMMON PAGE
+========================= */
 
 .page{
     width:100%;
     min-height:100vh;
 
+    display:flex;
     justify-content:center;
     align-items:center;
 
     position:relative;
     z-index:2;
+
+    padding:25px;
 }
 
-/* Password */
+
+/* =========================
+   PASSWORD
+========================= */
 
 #passwordPage{
-    padding:20px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,79,163,.08),
+            transparent 50%
+        );
 }
 
 .glass{
-    width:380px;
-    max-width:90%;
+    width:420px;
+    max-width:92%;
 
-    padding:40px;
+    padding:45px 35px;
 
-    border-radius:25px;
+    border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.075);
 
-    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.12);
 
-    box-shadow:0 0 30px rgba(255,255,255,.15);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.1);
 
     text-align:center;
 
-    animation:fadeIn 1s;
+    animation:cardAppear 1s ease;
 }
 
 .glass h2{
-    margin-bottom:20px;
+    font-size:30px;
+    margin-bottom:22px;
 }
 
 .glass p{
-    color:#ddd;
+    color:#d8d8e2;
     line-height:30px;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .glass input{
     width:100%;
 
-    padding:15px;
+    padding:16px 18px;
 
     border:none;
-    border-radius:12px;
-
     outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.95);
+
+    color:#333;
 
     text-align:center;
 
-    font-size:17px;
+    font-size:16px;
+}
+
+.glass input::placeholder{
+    color:#777;
+}
+
+.glass button{
+    width:100%;
+    margin-top:20px;
 }
 
 .glass small{
     display:block;
-    margin-top:15px;
-    color:#bbb;
+
+    margin-top:18px;
+
+    color:#aaa;
+
+    font-size:13px;
 }
 
-/* Envelope */
+
+/* =========================
+   ENVELOPE
+========================= */
 
 #envelopePage{
     flex-direction:column;
 }
 
 .envelope{
-    width:280px;
-    height:180px;
+    width:300px;
+    height:195px;
 
-    background:#ffb6c1;
+    background:linear-gradient(
+        135deg,
+        #ffb6c8,
+        #ff8fab
+    );
 
-    border-radius:10px;
+    border-radius:12px;
 
     position:relative;
 
     cursor:pointer;
 
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        0 0 35px rgba(255,79,163,.25);
+
     transition:.4s;
 
-    box-shadow:0 15px 35px rgba(
+    animation:envelopeAppear 1s ease;
+}
+
+.envelope:hover{
+    transform:scale(1.06) translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.5),
+        0 0 45px rgba(255,79,163,.4);
+}
+
+.cover{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100px;
+
+    background:linear-gradient(
+        135deg,
+        #ff8fab,
+        #ff7199
+    );
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    z-index:3;
+}
+
+.letter{
+    position:absolute;
+
+    width:88%;
+    height:82%;
+
+    left:6%;
+    bottom:5%;
+
+    background:#fff;
+
+    border-radius:9px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:60px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.tapText{
+    margin-top:30px;
+
+    color:#ddd;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+    animation:pulseText 2s infinite;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+#letterPage{
+    align-items:flex-start;
+
+    padding:
+        70px 20px 130px;
+}
+
+.paper{
+    width:720px;
+    max-width:95%;
+
+    min-height:500px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #fff8ed
+        );
+
+    color:#333;
+
+    padding:45px 45px 55px;
+
+    border-radius:22px;
+
+    position:relative;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5),
+        0 0 35px rgba(255,255,255,.08);
+
+    animation:paperAppear 1s ease;
+}
+
+.paper:before{
+    content:"";
+
+    position:absolute;
+
+    inset:10px;
+
+    border:1px solid rgba(255,79,129,.12);
+
+    border-radius:16px;
+
+    pointer-events:none;
+}
+
+.paper h2{
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:#ff4f81;
+
+    font-size:27px;
+
+    position:relative;
+}
+
+#typewriter{
+    font-size:20px;
+
+    line-height:38px;
+
+    white-space:pre-line;
+
+    position:relative;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+#nextChapterBtn{
+    display:none;
+
+    position:fixed;
+
+    left:50%;
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    z-index:1000;
+
+    margin:0;
+
+    min-width:280px;
+
+    padding:16px 30px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ff4fa3,
+        #ff2f91
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    box-shadow:
+        0 10px 35px rgba(255,79,163,.45),
+        0 0 25px rgba(255,79,163,.3);
+
+    animation:buttonAppear 1s ease;
+}
+
+#nextChapterBtn:hover{
+    transform:translateX(-50%) scale(1.06);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+@keyframes envelopeAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.7) translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+
+}
+
+@keyframes paperAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes buttonAppear{
+
+    from{
+        opacity:0;
+        transform:translateX(-50%) translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(-50%) translateY(0);
+    }
+
+}
+
+@keyframes pulseText{
+
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    #welcome{
+        padding:20px;
+    }
+
+    #welcome h3{
+        font-size:15px;
+    }
+
+    #welcome h1{
+        font-size:42px;
+        line-height:1.15;
+    }
+
+    #welcome p{
+        font-size:17px;
+        line-height:31px;
+    }
+
+    #welcome button{
+        width:90%;
+        max-width:360px;
+        padding:15px 20px;
+    }
+
+    .glass{
+        padding:35px 25px;
+    }
+
+    .glass h2{
+        font-size:26px;
+    }
+
+    .envelope{
+        width:280px;
+        height:180px;
+    }
+
+    #letterPage{
+        padding:
+            40px 15px 120px;
+    }
+
+    .paper{
+        padding:35px 25px 45px;
+        width:100%;
+    }
+
+    .paper h2{
+        font-size:24px;
+    }
+
+    #typewriter{
+        font-size:18px;
+        line-height:34px;
+    }
+
+    #nextChapterBtn{
+        min-width:250px;
+        width:auto;
+        max-width:90%;
+        font-size:15px;
+        bottom:18px;
+    }
+
+}
