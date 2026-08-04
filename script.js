@@ -5,6 +5,7 @@ function hideAllPages() {
     document.getElementById("envelopePage").classList.add("hidden");
     document.getElementById("letterPage").classList.add("hidden");
     document.getElementById("chapter2").classList.add("hidden");
+    document.getElementById("finalChapter").classList.add("hidden");
 
 }
 
