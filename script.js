@@ -480,9 +480,11 @@ function goToFinalChapter() {
 
     hideAllPages();
 
-    document
-        .getElementById("finalChapter")
-        .classList.remove("hidden");
+    const finalPage = document.getElementById("finalChapter");
+
+    finalPage.classList.remove("hidden");
+
+    finalPage.style.display = "flex";
 
 }
 /* =========================
