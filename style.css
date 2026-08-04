@@ -601,3 +601,105 @@ button:hover{
     }
 
 }
+/* =========================
+   CHAPTER 2
+========================= */
+
+#chapter2{
+    min-height:100vh;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.chapterCard{
+    width:650px;
+    max-width:95%;
+
+    padding:55px 40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4),
+        0 0 35px rgba(255,79,163,.12);
+
+    animation:chapterAppear 1.2s ease;
+}
+
+.chapterNumber{
+    color:#ffd369;
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+}
+
+.chapterCard h2{
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 20px rgba(255,79,163,.5);
+}
+
+.chapterIntro{
+    color:#d8d8d8;
+
+    font-size:18px;
+
+    line-height:34px;
+
+    max-width:520px;
+
+    margin:auto;
+}
+
+.chapterCard button{
+    margin-top:35px;
+}
+
+@keyframes chapterAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .chapterCard{
+        padding:45px 25px;
+    }
+
+    .chapterCard h2{
+        font-size:32px;
+    }
+
+    .chapterIntro{
+        font-size:17px;
+        line-height:31px;
+    }
+
+}
