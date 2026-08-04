@@ -1,9 +1,9 @@
 function hideAllPages() {
 
-    document.getElementById("welcome").style.setProperty("display", "none", "important");
-    document.getElementById("passwordPage").style.setProperty("display", "none", "important");
-    document.getElementById("envelopePage").style.setProperty("display", "none", "important");
-    document.getElementById("letterPage").style.setProperty("display", "none", "important");
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("passwordPage").style.display = "none";
+    document.getElementById("envelopePage").style.display = "none";
+    document.getElementById("letterPage").style.display = "none";
 
 }
 
@@ -12,7 +12,11 @@ function hideAllPages() {
 
 function nextPage() {
 
-    alert("BUTTON WORKING ❤️");
+    hideAllPages();
+
+    document.getElementById("passwordPage").classList.remove("hidden");
+
+    document.getElementById("passwordPage").style.display = "flex";
 
 }
 
