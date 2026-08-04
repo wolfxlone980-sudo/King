@@ -1,4 +1,3 @@
-
 function hideAllPages() {
 
     document.getElementById("welcome").classList.add("hidden");
@@ -10,18 +9,24 @@ function hideAllPages() {
 }
 
 
-/* Welcome → Password */
+/* =========================
+   WELCOME → PASSWORD
+========================= */
 
 function nextPage() {
 
     hideAllPages();
 
-    document.getElementById("passwordPage").classList.remove("hidden");
+    document
+        .getElementById("passwordPage")
+        .classList.remove("hidden");
 
 }
 
 
-/* Password → Envelope */
+/* =========================
+   PASSWORD → ENVELOPE
+========================= */
 
 function checkPassword() {
 
@@ -48,7 +53,9 @@ function checkPassword() {
 }
 
 
-/* Envelope → Letter */
+/* =========================
+   ENVELOPE → LETTER
+========================= */
 
 function openEnvelope() {
 
@@ -67,7 +74,9 @@ function openEnvelope() {
 }
 
 
-/* Birthday Letter */
+/* =========================
+   CHAPTER 1 LETTER
+========================= */
 
 const lines = [
 
@@ -89,11 +98,8 @@ const lines = [
 
 ];
 
-
 let line = 0;
 
-
-/* Start Letter */
 
 function startLetter() {
 
@@ -107,8 +113,6 @@ function startLetter() {
 
 }
 
-
-/* Typewriter */
 
 function showNextLine() {
 
@@ -131,7 +135,8 @@ function showNextLine() {
 
     let i = 0;
 
-    let box = document.getElementById("typewriter");
+    let box = document
+        .getElementById("typewriter");
 
 
     let typing = setInterval(function() {
@@ -158,7 +163,9 @@ function showNextLine() {
 }
 
 
-/* Chapter 2 */
+/* =========================
+   CHAPTER 1 → CHAPTER 2
+========================= */
 
 function goToChapter2() {
 
@@ -171,222 +178,98 @@ function goToChapter2() {
 }
 
 
-/* Start Website */
+/* =========================
+   CHAPTER 2 STORY
+========================= */
 
-window.addEventListener("load", function() {
+const chapter2Lines = [
 
-    hideAllPages();
+    "Our story didn't really start with a beautiful moment... 🤍",
+
+    "বরং শুরু হয়েছিল একটা classroom আর একটা ছোট্ট ঝগড়া দিয়ে। 😬",
+
+    "সেদিন হয়তো ভাবিনি, এই মানুষটাই একদিন আমার জীবনের এতটা কাছের একজন হয়ে যাবে।",
+
+    "তখন আমরা খুব close ছিলাম না... friend বললেও হয়তো একটু বেশি বলা হয়ে যেত।",
+
+    "Then came 28 November 2023... ✨",
+
+    "একটা simple video... একটা comment... আর সেখান থেকেই আবার শুরু হলো কথা বলা।",
+
+    "তারপর একদিন সে আমাকে তার number দিতে চাইল।",
+
+    "But TikTok had other plans! 😭😂",
+
+    "তাই privacy-এর কারণে number সরাসরি দেওয়া সম্ভব না হওয়ায় তার legendary solution ছিল—",
+
+    "\"zero one seven\" 😁",
+
+    "Honestly... তার এই বুদ্ধি দেখে আমি একটু অবাকই হয়েছিলাম। 😂❤️",
+
+    "তারপর কয়েক মাস ধরে চলল আমাদের endless conversations...",
+
+    "কিন্তু গল্পটা তখনও পুরোপুরি লেখা হয়নি...",
+
+    "27 April 2024... হঠাৎ করেই সে হারিয়ে গেল।",
+
+    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি। 💔",
+
+    "সময় চলে গেল। অনেক কিছু বদলে গেল।",
+
+    "But maybe... the story wasn't meant to end there.",
+
+    "Because then came 2 June 2025. ✨",
+
+    "একদিন হঠাৎ... an unknown number texted me.",
+
+    "আর সেই unknown number-এর ওপাশে ছিল... সে। ❤️",
+
+    "তারপর থেকে... we never really lost contact again.",
+
+    "And maybe that's the beautiful part...",
+
+    "কিছু মানুষ আমাদের জীবনে হঠাৎ আসে, আবার হঠাৎ হারিয়েও যায়...",
+
+    "কিন্তু যদি গল্পটা সত্যিই তাদের নিয়ে হয়...",
+
+    "somehow, they find their way back. 🤍"
+
+];
+
+
+let chapter2Line = 0;
+
+
+/* Open Chapter 2 */
+
+function startChapter2() {
+
+    chapter2Line = 0;
 
     document
-        .getElementById("welcome")
-        .classList.remove("hidden");
-
-});
-// =========================
-// CHAPTER 2 STORY
-// =========================
-
-const chapter2Lines = [
-
-    "Our story didn't really start with a beautiful moment... 🤍",
-
-    "বরং শুরু হয়েছিল একটা classroom আর একটা ছোট্ট ঝগড়া দিয়ে। 😬",
-
-    "সেদিন হয়তো ভাবিনি, এই মানুষটাই একদিন আমার জীবনের এতটা কাছের একজন হয়ে যাবে।",
-
-    "তখন আমরা খুব close ছিলাম না... friend বললেও হয়তো একটু বেশি বলা হয়ে যেত।",
-
-    "Then came 28 November 2023... ✨",
-
-    "একটা simple video... একটা comment... আর সেখান থেকেই আবার শুরু হলো কথা বলা।",
-
-    "তারপর একদিন সে আমাকে তার number দিতে চাইল।",
-
-    "But TikTok had other plans! 😭😂",
-
-    "তাই privacy-এর কারণে number সরাসরি দেওয়া সম্ভব না হওয়ায় তার legendary solution ছিল—",
-
-    "\"zero one seven\" 😁",
-
-    "Honestly... তার এই বুদ্ধি দেখে আমি একটু অবাকই হয়েছিলাম। 😂❤️",
-
-    "তারপর কয়েক মাস ধরে চলল আমাদের endless conversations...",
-
-    "কিন্তু গল্পটা তখনও পুরোপুরি লেখা হয়নি...",
-
-    "27 April 2024... হঠাৎ করেই সে হারিয়ে গেল।",
-
-    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি। 💔",
-
-    "সময় চলে গেল। অনেক কিছু বদলে গেল।",
-
-    "But maybe... the story wasn't meant to end there.",
-
-    "Because then came 2 June 2025. ✨",
-
-    "একদিন হঠাৎ... an unknown number texted me.",
-
-    "আর সেই unknown number-এর ওপাশে ছিল... সে। ❤️",
-
-    "তারপর থেকে... we never really lost contact again.",
-
-    "And maybe that's the beautiful part...",
-
-    "কিছু মানুষ আমাদের জীবনে হঠাৎ আসে, আবার হঠাৎ হারিয়েও যায়...",
-
-    "কিন্তু যদি গল্পটা সত্যিই তাদের নিয়ে হয়...",
-
-    "somehow, they find their way back. 🤍"
-
-];
-
-let chapter2Line = 0;
-
-
-function startChapter2(){
-
-    chapter2Line = 0;
-
-    document.getElementById("chapter2Story").innerHTML = "";
-
-    document.getElementById("chapter2NextBtn").style.display = "block";
-
-    showNextChapter2Line();
-
-}
-
-
-function showNextChapter2Line(){
-
-    if(chapter2Line >= chapter2Lines.length){
-
-        document.getElementById("chapter2NextBtn").innerHTML =
-            "📖 Continue to Chapter 3";
-
-        document.getElementById("chapter2NextBtn").onclick =
-            goToChapter3;
-
-        return;
-
-    }
-
-
-    let text = chapter2Lines[chapter2Line];
-
-    let box = document.getElementById("chapter2Story");
-
-    box.innerHTML = "";
-
-    let i = 0;
-
-
-    let typing = setInterval(function(){
-
-        box.innerHTML += text.charAt(i);
-
-        i++;
-
-
-        if(i >= text.length){
-
-            clearInterval(typing);
-
-            chapter2Line++;
-
-        }
-
-    },45);
-
-}
-
-
-function goToChapter3(){
-
-    alert("Chapter 3 is coming soon ❤️");
-
-}
-
-// =========================
-// CHAPTER 2 STORY - FINAL
-// =========================
-
-const chapter2Lines = [
-
-    "Our story didn't really start with a beautiful moment... 🤍",
-
-    "বরং শুরু হয়েছিল একটা classroom আর একটা ছোট্ট ঝগড়া দিয়ে। 😬",
-
-    "সেদিন হয়তো ভাবিনি, এই মানুষটাই একদিন আমার জীবনের এতটা কাছের একজন হয়ে যাবে।",
-
-    "তখন আমরা খুব close ছিলাম না... friend বললেও হয়তো একটু বেশি বলা হয়ে যেত।",
-
-    "Then came 28 November 2023... ✨",
-
-    "একটা simple video... একটা comment... আর সেখান থেকেই আবার শুরু হলো কথা বলা।",
-
-    "তারপর একদিন সে আমাকে তার number দিতে চাইল।",
-
-    "But TikTok had other plans! 😭😂",
-
-    "তাই privacy-এর কারণে number সরাসরি দেওয়া সম্ভব না হওয়ায় তার legendary solution ছিল—",
-
-    "\"zero one seven\" 😁",
-
-    "Honestly... তার এই বুদ্ধি দেখে আমি একটু অবাকই হয়েছিলাম। 😂❤️",
-
-    "তারপর কয়েক মাস ধরে চলল আমাদের endless conversations...",
-
-    "কিন্তু গল্পটা তখনও পুরোপুরি লেখা হয়নি...",
-
-    "27 April 2024... হঠাৎ করেই সে হারিয়ে গেল।",
-
-    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি। 💔",
-
-    "সময় চলে গেল। অনেক কিছু বদলে গেল।",
-
-    "But maybe... the story wasn't meant to end there.",
-
-    "Because then came 2 June 2025. ✨",
-
-    "একদিন হঠাৎ... an unknown number texted me.",
-
-    "আর সেই unknown number-এর ওপাশে ছিল... সে। ❤️",
-
-    "তারপর থেকে... we never really lost contact again.",
-
-    "And maybe that's the beautiful part...",
-
-    "কিছু মানুষ আমাদের জীবনে হঠাৎ আসে, আবার হঠাৎ হারিয়েও যায়...",
-
-    "কিন্তু যদি গল্পটা সত্যিই তাদের নিয়ে হয়...",
-
-    "somehow, they find their way back. 🤍"
-
-];
-
-let chapter2Line = 0;
-
-
-// Open Chapter 2
-function startChapter2(){
-
-    chapter2Line = 0;
+        .getElementById("chapter2Story")
+        .innerHTML = "";
 
     showChapter2Line();
 
 }
 
 
-// Show one line
-function showChapter2Line(){
+/* Show Next Chapter 2 Line */
 
-    const box = document.getElementById("chapter2Story");
+function showChapter2Line() {
 
-    const btn = document.getElementById("chapter2NextBtn");
+    const box = document
+        .getElementById("chapter2Story");
 
-    if(chapter2Line >= chapter2Lines.length){
+    const btn = document
+        .getElementById("chapter2NextBtn");
 
-        btn.innerHTML = "📖 Continue to Chapter 3";
+
+    if (chapter2Line >= chapter2Lines.length) {
+
+        btn.innerHTML =
+            "📖 Continue to Chapter 3";
 
         btn.onclick = goToChapter3;
 
@@ -394,13 +277,16 @@ function showChapter2Line(){
 
     }
 
+
     box.innerHTML = `
         <div class="chapterStoryText">
             ${chapter2Lines[chapter2Line]}
         </div>
     `;
 
+
     chapter2Line++;
+
 
     btn.style.display = "inline-block";
 
@@ -411,10 +297,27 @@ function showChapter2Line(){
 }
 
 
-function goToChapter3(){
+/* =========================
+   CHAPTER 3
+========================= */
+
+function goToChapter3() {
 
     alert("Chapter 3 is coming soon ❤️");
 
 }
 
 
+/* =========================
+   START WEBSITE
+========================= */
+
+window.addEventListener("load", function() {
+
+    hideAllPages();
+
+    document
+        .getElementById("welcome")
+        .classList.remove("hidden");
+
+});
