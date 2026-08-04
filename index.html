@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Favourite Chapter ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <!-- Welcome -->
+    <section id="welcome">
+
+        <h3>✨ Every Story Has A Beginning ✨</h3>
+
+        <h1>Favourite Chapter</h1>
+
+        <p>
+            Some people become memories...
+            <br>
+            Some become lessons...
+            <br><br>
+            But a very few become...
+            <br>
+            <b>Our Favourite Chapter.</b>
+        </p>
+
+        <button onclick="nextPage()">
+            Begin The Journey ❤️
+        </button>
+
+    </section>
+
+
+    <!-- Password -->
+    <section id="passwordPage" class="page hidden">
+
+        <div class="glass">
+
+            <h2>🔐 Secret Chapter</h2>
+
+            <p>
+                Every beautiful story has a secret.
+                <br><br>
+                Enter the password to continue.
+            </p>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Favourite Password"
+            >
+
+            <button onclick="checkPassword()">
+                Unlock ❤️
+            </button>
+
+            <small>
+                Hint: What's your favourite chapter?
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- Envelope -->
+    <section id="envelopePage" class="page hidden">
+
+        <div class="envelope" onclick="openEnvelope()">
+
+            <div class="cover"></div>
+
+            <div class="letter">
+                💌
+            </div>
+
+        </div>
+
+        <p class="tapText">
+            Tap the envelope
+        </p>
+
+    </section>
+
+
+    <!-- Letter -->
+    <section id="letterPage" class="page hidden">
+
+        <div class="paper">
+
+            <h2>💌 Favourite Chapter</h2>
+
+            <p id="typewriter"></p>
+
+            <button
+                id="nextChapterBtn"
+                onclick="goToChapter2()"
+            >
+                📖 Continue to Chapter 2
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
