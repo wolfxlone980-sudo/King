@@ -35,8 +35,6 @@ body{
     text-align:center;
     padding:20px;
     animation:fadeIn 2s;
-    position:relative;
-    z-index:2;
 }
 
 #welcome h3{
@@ -79,8 +77,6 @@ button:hover{
 
 .stars{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background-image:
@@ -96,7 +92,6 @@ button:hover{
     animation:moveStars 60s linear infinite;
     opacity:.8;
     pointer-events:none;
-    z-index:0;
 }
 
 @keyframes moveStars{
@@ -133,9 +128,6 @@ button:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
-    position:relative;
-    z-index:2;
 }
 
 .glass{
@@ -176,7 +168,7 @@ button:hover{
     color:#bbb;
 }
 
-/* Envelope Scene */
+/* Envelope */
 
 #envelopePage{
     width:100%;
@@ -185,8 +177,6 @@ button:hover{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    position:relative;
-    z-index:2;
 }
 
 .envelope{
@@ -243,8 +233,6 @@ button:hover{
     justify-content:center;
     align-items:center;
     padding:30px 20px 100px;
-    position:relative;
-    z-index:2;
 }
 
 .paper{
@@ -276,7 +264,7 @@ button:hover{
     display:none;
     position:fixed;
     left:50%;
-    bottom:25px;
+    bottom:20px;
     transform:translateX(-50%);
     z-index:1000;
 
@@ -286,12 +274,10 @@ button:hover{
     border:none;
     border-radius:30px;
 
-    background:linear-gradient(135deg,#ff4fa3,#ff758c);
+    background:#ff4fa3;
     color:white;
 
     font-size:16px;
-    font-weight:500;
-
     cursor:pointer;
 
     box-shadow:0 8px 25px rgba(255,79,163,.4);
@@ -299,23 +285,6 @@ button:hover{
 
 #nextChapterBtn:hover{
     transform:translateX(-50%) scale(1.06);
-    box-shadow:0 10px 30px rgba(255,79,163,.6);
-}
-
-/* Button Animation */
-
-@keyframes buttonAppear{
-
-    from{
-        opacity:0;
-        transform:translateX(-50%) translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
-    }
-
 }
 
 /* Mobile */
@@ -333,10 +302,6 @@ button:hover{
 
     #welcome button{
         width:90%;
-    }
-
-    .paper{
-        padding:30px 25px 90px;
     }
 
     #typewriter{
