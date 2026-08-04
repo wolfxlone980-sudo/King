@@ -353,3 +353,129 @@ window.addEventListener("load", function() {
         .classList.remove("hidden");
 
 });
+/* =========================
+   CHAPTER 3
+========================= */
+
+const chapter3Lines = [
+
+    "At first, everything was pretty simple... 😊",
+
+    "আমি একটু বেশি fun করতাম, আর তুইও সেগুলো equally enjoy করতি।",
+
+    "তারপর কখন যে আমরা এতটা close হয়ে গেলাম... honestly, I didn't even notice. 🤍",
+
+    "কিছু রাত তো এমনও গেছে—9টা-10টায় কথা শুরু করে কখন যে সকাল 5টা-6টা বেজে গেছে, বুঝতেই পারিনি। 🌙",
+
+    "সবচেয়ে অবাক করার বিষয়... এতক্ষণ কথা বলার পরেও আমাদের কথা যেন কখনো শেষ হতো না।",
+
+    "আর তোর ওই জেদটা... 😑❤️",
+
+    "মাঝে মাঝে সত্যিই বিরক্ত করতি, but somehow... that stubborn little side of you became one of my favourite things. 😂",
+
+    "কিন্তু জানিস...",
+
+    "ঠিক কখন তুই আমার কাছে এতটা important হয়ে গেলি, সেটা আমি নিজেও বুঝতে পারিনি।",
+
+    "কোনো particular moment ছিল না... কোনো special day-ও না।",
+
+    "Maybe it happened somewhere between all those random talks, stupid jokes, little arguments and endless nights...",
+
+    "কখন যে 'তুই' শুধু একজন মানুষ না হয়ে আমার favourite person হয়ে গেলি... I just didn't notice. 🤍",
+
+    "And maybe... that's the part I never really said. ❤️"
+
+];
+
+let chapter3Line = 0;
+
+
+/* Chapter 3 Start */
+
+function startChapter3() {
+
+    chapter3Line = 0;
+
+    document
+        .getElementById("chapter3Story")
+        .innerHTML = "";
+
+    document
+        .getElementById("chapter3NextBtn")
+        .style.display = "none";
+
+    showNextChapter3Line();
+
+}
+
+
+/* Chapter 3 Typing */
+
+function showNextChapter3Line() {
+
+    const box = document
+        .getElementById("chapter3Story");
+
+    const btn = document
+        .getElementById("chapter3NextBtn");
+
+
+    if (chapter3Line >= chapter3Lines.length) {
+
+        btn.innerHTML = "💌 Continue to Final Chapter";
+
+        btn.style.display = "inline-block";
+
+        btn.onclick = goToFinalChapter;
+
+        return;
+
+    }
+
+
+    let text = chapter3Lines[chapter3Line];
+
+    let i = 0;
+
+    box.innerHTML = "";
+
+    btn.style.display = "none";
+
+
+    let typing = setInterval(function() {
+
+        box.innerHTML += text.charAt(i);
+
+        i++;
+
+
+        if (i >= text.length) {
+
+            clearInterval(typing);
+
+            chapter3Line++;
+
+            btn.innerHTML = "Continue ✨";
+
+            btn.style.display = "inline-block";
+
+            btn.onclick = showNextChapter3Line;
+
+        }
+
+    }, 45);
+
+}
+
+
+/* Chapter 3 → Final Chapter */
+
+function goToFinalChapter() {
+
+    hideAllPages();
+
+    document
+        .getElementById("finalChapter")
+        .classList.remove("hidden");
+
+}
