@@ -703,3 +703,61 @@ button:hover{
     }
 
 }
+/* =========================
+   PREMIUM CHAPTER 2
+========================= */
+
+#chapter2Story{
+    min-height:120px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.chapterStoryText{
+    font-size:21px;
+    line-height:1.9;
+    color:#f5f5f5;
+    max-width:600px;
+    text-shadow:0 0 15px rgba(255,255,255,.12);
+    animation:storyFade .8s ease;
+}
+
+@keyframes storyFade{
+
+    from{
+        opacity:0;
+        transform:translateY(12px);
+        filter:blur(4px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0);
+    }
+
+}
+
+#chapter2NextBtn{
+    margin-top:35px;
+    transition:.4s ease;
+}
+
+#chapter2NextBtn:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 30px rgba(255,79,163,.7);
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .chapterStoryText{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+}
