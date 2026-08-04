@@ -761,3 +761,69 @@ button:hover{
     }
 
 }
+/* =========================
+   SPECIAL DATE MOMENTS
+========================= */
+
+.dateMoment{
+    animation:
+        storyFade .8s ease,
+        dateGlow 2.5s ease-in-out infinite alternate;
+}
+
+.sadMoment{
+    animation:
+        storyFade .8s ease,
+        sadGlow 2.5s ease-in-out infinite alternate;
+}
+
+.returnMoment{
+    animation:
+        storyFade .8s ease,
+        returnGlow 2.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes dateGlow{
+
+    from{
+        text-shadow:
+            0 0 8px rgba(255,211,105,.2);
+    }
+
+    to{
+        text-shadow:
+            0 0 25px rgba(255,211,105,.75);
+    }
+
+}
+
+
+@keyframes sadGlow{
+
+    from{
+        text-shadow:
+            0 0 8px rgba(255,100,130,.15);
+    }
+
+    to{
+        text-shadow:
+            0 0 25px rgba(255,100,130,.65);
+    }
+
+}
+
+
+@keyframes returnGlow{
+
+    from{
+        text-shadow:
+            0 0 10px rgba(255,79,163,.2);
+    }
+
+    to{
+        text-shadow:
+            0 0 30px rgba(255,79,163,.85);
+    }
+
+}
