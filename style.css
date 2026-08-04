@@ -979,6 +979,7 @@ button:hover{
     }
 
 }
+
 /* =========================
    FINAL CHAPTER
 ========================= */
@@ -1140,4 +1141,229 @@ button:hover{
 
     letter-spacing:5px;
 
-    color
+    color:white;
+
+    margin:0;
+
+    text-shadow:
+        0 0 20px rgba(255,79,163,.5),
+        0 0 50px rgba(255,79,163,.25);
+}
+
+
+.birthdayContent h2{
+    font-size:42px;
+
+    margin:15px 0 35px;
+
+    color:#ff9bc7;
+
+    text-shadow:
+        0 0 25px rgba(255,79,163,.6);
+}
+
+
+#birthdayMessage{
+    min-height:100px;
+
+    max-width:600px;
+
+    margin:auto;
+
+    color:#f5f5f5;
+
+    font-size:19px;
+
+    line-height:1.9;
+}
+
+
+#oneMoreBtn{
+    margin-top:35px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:transparent;
+
+    color:#ffc7dc;
+
+    border:1px solid rgba(255,199,220,.35);
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+}
+
+
+#oneMoreBtn:hover{
+    background:rgba(255,79,163,.15);
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(255,79,163,.3);
+}
+
+
+/* Ultimate Ending */
+
+#ultimateEnding{
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,79,163,.18),
+            transparent 60%
+        );
+
+    text-align:center;
+}
+
+
+.endingContent{
+    max-width:650px;
+
+    animation:endingReveal 2s ease;
+}
+
+
+.endingHeart{
+    font-size:55px;
+
+    margin-bottom:30px;
+
+    animation:heartBeat 2s infinite;
+}
+
+
+#ultimateText{
+    color:white;
+
+    font-size:21px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.15);
+}
+
+
+/* Animations */
+
+@keyframes finalAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.96);
+        filter:blur(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+
+}
+
+
+@keyframes birthdayAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+        filter:blur(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+
+}
+
+
+@keyframes endingReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+@keyframes starFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .finalReveal{
+        padding:45px 22px;
+    }
+
+    .finalReveal h1{
+        font-size:32px;
+    }
+
+    .finalHint{
+        font-size:16px;
+    }
+
+    .birthdayContent h1{
+        font-size:38px;
+        letter-spacing:3px;
+    }
+
+    .birthdayContent h2{
+        font-size:32px;
+    }
+
+    #birthdayMessage{
+        font-size:18px;
+    }
+
+    #ultimateText{
+        font-size:18px;
+        line-height:1.9;
+    }
+
+}
