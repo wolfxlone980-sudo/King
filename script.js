@@ -7,21 +7,13 @@ function hideAllPages() {
 
 }
 
-
-/* Welcome → Password */
-
 function nextPage() {
 
     hideAllPages();
 
-    document.getElementById("passwordPage").classList.remove("hidden");
-
     document.getElementById("passwordPage").style.display = "flex";
 
 }
-
-
-/* Password → Envelope */
 
 function checkPassword() {
 
@@ -31,7 +23,7 @@ function checkPassword() {
 
         hideAllPages();
 
-        document.getElementById("envelopePage").style.setProperty("display", "flex", "important");
+        document.getElementById("envelopePage").style.display = "flex";
 
     } else {
 
@@ -41,14 +33,11 @@ function checkPassword() {
 
 }
 
-
-/* Envelope → Letter */
-
 function openEnvelope() {
 
     hideAllPages();
 
-    document.getElementById("letterPage").style.setProperty("display", "flex", "important");
+    document.getElementById("letterPage").style.display = "flex";
 
     document.getElementById("nextChapterBtn").style.display = "none";
 
@@ -56,32 +45,20 @@ function openEnvelope() {
 
 }
 
-
-/* Birthday Letter */
-
 const lines = [
 
     "Hey tui... ❤️",
-
     "Haa... tokei bolchi. 😊",
-
     "Aj tor Birthday... 🎂",
-
     "Hoyto vabchis...",
-
     "Eta sudhu ekta website na...",
-
     "Eta amar tor jonno banano ekta chotto surprise. 🤍",
-
     "Tai aste aste por...",
-
     "Golpota ekhono shesh hoyni... ✨"
 
 ];
 
-
 let line = 0;
-
 
 function startLetter() {
 
@@ -92,7 +69,6 @@ function startLetter() {
     showNextLine();
 
 }
-
 
 function showNextLine() {
 
@@ -108,20 +84,17 @@ function showNextLine() {
 
     }
 
-
     let text = lines[line];
 
     let i = 0;
 
     let box = document.getElementById("typewriter");
 
-
     let typing = setInterval(function() {
 
         box.innerHTML += text.charAt(i);
 
         i++;
-
 
         if (i >= text.length) {
 
@@ -139,22 +112,16 @@ function showNextLine() {
 
 }
 
-
-/* Chapter 2 */
-
 function goToChapter2() {
 
     alert("Chapter 2 is coming soon ❤️");
 
 }
 
-
-/* Start Website */
-
 window.onload = function() {
 
     hideAllPages();
 
-    document.getElementById("welcome").style.setProperty("display", "flex", "important");
+    document.getElementById("welcome").style.display = "flex";
 
 };
