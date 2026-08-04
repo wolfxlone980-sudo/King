@@ -1,9 +1,9 @@
 function hideAllPages() {
 
-    document.getElementById("welcome").classList.add("hidden");
-    document.getElementById("passwordPage").classList.add("hidden");
-    document.getElementById("envelopePage").classList.add("hidden");
-    document.getElementById("letterPage").classList.add("hidden");
+    document.getElementById("welcome").style.setProperty("display", "none", "important");
+    document.getElementById("passwordPage").style.setProperty("display", "none", "important");
+    document.getElementById("envelopePage").style.setProperty("display", "none", "important");
+    document.getElementById("letterPage").style.setProperty("display", "none", "important");
 
 }
 
@@ -14,7 +14,7 @@ function nextPage() {
 
     hideAllPages();
 
-    document.getElementById("passwordPage").classList.remove("hidden");
+    document.getElementById("passwordPage").style.setProperty("display", "flex", "important");
 
 }
 
@@ -23,19 +23,13 @@ function nextPage() {
 
 function checkPassword() {
 
-    let pass = document
-        .getElementById("password")
-        .value
-        .toLowerCase()
-        .trim();
+    let pass = document.getElementById("password").value.toLowerCase().trim();
 
     if (pass === "favourite chapter") {
 
         hideAllPages();
 
-        document
-            .getElementById("envelopePage")
-            .classList.remove("hidden");
+        document.getElementById("envelopePage").style.setProperty("display", "flex", "important");
 
     } else {
 
@@ -52,13 +46,9 @@ function openEnvelope() {
 
     hideAllPages();
 
-    document
-        .getElementById("letterPage")
-        .classList.remove("hidden");
+    document.getElementById("letterPage").style.setProperty("display", "flex", "important");
 
-    document
-        .getElementById("nextChapterBtn")
-        .style.display = "none";
+    document.getElementById("nextChapterBtn").style.display = "none";
 
     startLetter();
 
@@ -102,21 +92,18 @@ function startLetter() {
 }
 
 
-/* Typewriter */
-
 function showNextLine() {
 
     if (line >= lines.length) {
 
         setTimeout(function() {
 
-            document
-                .getElementById("nextChapterBtn")
-                .style.display = "block";
+            document.getElementById("nextChapterBtn").style.display = "block";
 
         }, 500);
 
         return;
+
     }
 
 
@@ -160,14 +147,12 @@ function goToChapter2() {
 }
 
 
-/* Start */
+/* Start Website */
 
 window.onload = function() {
 
     hideAllPages();
 
-    document
-        .getElementById("welcome")
-        .classList.remove("hidden");
+    document.getElementById("welcome").style.setProperty("display", "flex", "important");
 
 };
