@@ -160,7 +160,11 @@ function showNextLine() {
 
 function goToChapter2() {
 
-    alert("Chapter 2 is coming soon ❤️");
+    hideAllPages();
+
+    document
+        .getElementById("chapter2")
+        .classList.remove("hidden");
 
 }
 
