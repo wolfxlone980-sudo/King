@@ -333,12 +333,18 @@ box.innerHTML = `
    CHAPTER 3
 ========================= */
 
+
 function goToChapter3() {
 
-    alert("Chapter 3 is coming soon ❤️");
+    hideAllPages();
+
+    document
+        .getElementById("chapter3")
+        .classList.remove("hidden");
+
+    startChapter3();
 
 }
-
 
 /* =========================
    START WEBSITE
