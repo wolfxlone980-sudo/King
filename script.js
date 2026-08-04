@@ -9,6 +9,8 @@ function hideAllPages() {
 
 function nextPage() {
 
+    alert("Password page test ❤️");
+
     hideAllPages();
 
     document.getElementById("passwordPage").style.display = "flex";
