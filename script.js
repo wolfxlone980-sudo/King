@@ -485,3 +485,160 @@ function goToFinalChapter() {
         .classList.remove("hidden");
 
 }
+/* =========================
+   FINAL CHAPTER EXPERIENCE
+========================= */
+
+const birthdayLines = [
+
+    "Today is not just another day...",
+
+    "Because today, someone very special to me was born. ❤️",
+
+    "And somehow, life made sure our paths crossed again.",
+
+    "So today, I just want you to know...",
+
+    "I genuinely hope you always have a reason to smile.",
+
+    "I hope every little dream of yours finds its way to you.",
+
+    "And I hope you never forget how special you are. 🤍"
+
+];
+
+let birthdayLine = 0;
+
+
+/* Open Final Surprise */
+
+function openFinalSurprise() {
+
+    document
+        .getElementById("finalChapter")
+        .classList.add("hidden");
+
+    document
+        .getElementById("birthdayReveal")
+        .classList.remove("hidden");
+
+    birthdayLine = 0;
+
+    document
+        .getElementById("birthdayMessage")
+        .innerHTML = "";
+
+    document
+        .getElementById("oneMoreBtn")
+        .style.display = "none";
+
+    showBirthdayLine();
+
+}
+
+
+/* Birthday Typewriter */
+
+function showBirthdayLine() {
+
+    const box =
+        document.getElementById("birthdayMessage");
+
+    if (birthdayLine >= birthdayLines.length) {
+
+        setTimeout(function() {
+
+            document
+                .getElementById("oneMoreBtn")
+                .style.display = "inline-block";
+
+        }, 700);
+
+        return;
+
+    }
+
+
+    let text = birthdayLines[birthdayLine];
+
+    let i = 0;
+
+    box.innerHTML = "";
+
+
+    let typing = setInterval(function() {
+
+        box.innerHTML += text.charAt(i);
+
+        i++;
+
+
+        if (i >= text.length) {
+
+            clearInterval(typing);
+
+            birthdayLine++;
+
+            setTimeout(showBirthdayLine, 900);
+
+        }
+
+    }, 45);
+
+}
+
+
+/* One More Thing */
+
+function showFinalMessage() {
+
+    document
+        .getElementById("birthdayReveal")
+        .classList.add("hidden");
+
+    document
+        .getElementById("ultimateEnding")
+        .classList.remove("hidden");
+
+
+    const box =
+        document.getElementById("ultimateText");
+
+
+    box.innerHTML = `
+
+        I don't know what the future holds for us...
+
+        But I'm really glad that,
+        somehow, our paths crossed again. 🤍
+
+        From a classroom argument
+        to endless midnight conversations...
+
+        what a beautiful little journey
+        it has been.
+
+        And if I could wish one thing for you today...
+
+        I'd wish that life gives you
+        the same happiness you've unknowingly
+        brought into mine. ❤️
+
+        Happy Birthday, Suma. 🎂🌸
+
+        This whole little world you just walked through...
+
+        was made just for you. ❤️
+
+        21 August —
+        your day, and now a little special to me too.
+
+        Stay happy.
+        Stay crazy.
+        Stay exactly the way you are. 🤍
+
+        — From someone who's really glad
+        you found your way back.
+    `;
+
+}
