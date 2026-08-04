@@ -827,3 +827,155 @@ button:hover{
     }
 
 }
+/* =========================
+   CHAPTER 3 - PREMIUM STYLE
+========================= */
+
+#chapter3 {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    z-index: 2;
+
+    box-sizing: border-box;
+}
+
+.chapter3Paper {
+    width: 700px;
+    max-width: 92%;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35),
+        0 0 35px rgba(255,79,163,0.12);
+
+    backdrop-filter: blur(12px);
+
+    animation: fadeIn 1s ease;
+}
+
+.chapterNumber {
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+    color: #ffd6e7;
+
+    margin-bottom: 20px;
+}
+
+.chapter3Paper h1 {
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px rgba(255,79,163,0.5);
+}
+
+#chapter3Story {
+    min-height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    text-align: center;
+}
+
+.chapterStoryText {
+    max-width: 620px;
+}
+
+#chapter3NextBtn {
+    margin-top: 35px;
+
+    padding: 15px 32px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: #ff4fa3;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 30px rgba(255,79,163,0.45);
+
+    transition: 0.3s ease;
+}
+
+#chapter3NextBtn:hover {
+    transform: scale(1.06);
+}
+
+
+/* Mobile */
+
+@media(max-width:768px) {
+
+    #chapter3 {
+        padding: 30px 15px;
+    }
+
+    .chapter3Paper {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 35px 20px;
+
+        border-radius: 22px;
+    }
+
+    .chapter3Paper h1 {
+        font-size: 32px;
+    }
+
+    #chapter3Story {
+        font-size: 18px;
+
+        line-height: 1.9;
+
+        min-height: 170px;
+    }
+
+    #chapter3NextBtn {
+        width: 90%;
+
+        font-size: 16px;
+    }
+
+}
