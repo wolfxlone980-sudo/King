@@ -12,9 +12,7 @@ function hideAllPages() {
 
 function nextPage() {
 
-    hideAllPages();
-
-    document.getElementById("passwordPage").style.setProperty("display", "flex", "important");
+    alert("BUTTON WORKING ❤️");
 
 }
 
