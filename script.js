@@ -270,8 +270,23 @@ function showChapter2Line() {
 
     let text = chapter2Lines[chapter2Line];
 
-    box.innerHTML = `
-        <div class="chapterStoryText"></div>
+    let specialClass = "";
+
+if (text.includes("28 November 2023")) {
+    specialClass = "dateMoment";
+}
+
+if (text.includes("27 April 2024")) {
+    specialClass = "sadMoment";
+}
+
+if (text.includes("2 June 2025")) {
+    specialClass = "returnMoment";
+}
+
+box.innerHTML = `
+    <div class="chapterStoryText ${specialClass}"></div>
+`;
     `;
 
     const textBox = box.querySelector(".chapterStoryText");
