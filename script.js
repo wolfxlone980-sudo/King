@@ -181,7 +181,6 @@ function goToChapter2() {
 /* =========================
    CHAPTER 2 STORY
 ========================= */
-
 const chapter2Lines = [
 
     "Our story didn't really start with a beautiful moment... 🤍",
@@ -210,9 +209,9 @@ const chapter2Lines = [
 
     "কিন্তু গল্পটা তখনও পুরোপুরি লেখা হয়নি...",
 
-    "27 April 2024... হঠাৎ করেই সে হারিয়ে গেল।",
+    "27 April 2024... হঠাৎ করেই সবকিছু যেন থেমে গেল। 💔",
 
-    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি। 💔",
+    "আমি খুঁজেছি... কিন্তু তাকে আর পাইনি।",
 
     "সময় চলে গেল। অনেক কিছু বদলে গেল।",
 
@@ -235,7 +234,6 @@ const chapter2Lines = [
     "somehow, they find their way back. 🤍"
 
 ];
-
 
 let chapter2Line = 0;
 
