@@ -20,7 +20,7 @@ body{
 /* Hidden Pages */
 
 .hidden{
-    display:none !important;
+    display:none;
 }
 
 /* Welcome Screen */
