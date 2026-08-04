@@ -286,7 +286,6 @@ if (text.includes("2 June 2025")) {
 
 box.innerHTML = `
     <div class="chapterStoryText ${specialClass}"></div>
-`;
     `;
 
     const textBox = box.querySelector(".chapterStoryText");
