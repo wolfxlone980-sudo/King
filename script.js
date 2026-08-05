@@ -4,15 +4,28 @@
 
 function hideAllPages() {
 
-    document.getElementById("welcome").classList.add("hidden");
-    document.getElementById("passwordPage").classList.add("hidden");
-    document.getElementById("envelopePage").classList.add("hidden");
-    document.getElementById("letterPage").classList.add("hidden");
-    document.getElementById("chapter2").classList.add("hidden");
-    document.getElementById("chapter3").classList.add("hidden");
-    document.getElementById("finalChapter").classList.add("hidden");
-    document.getElementById("birthdayReveal").classList.add("hidden");
-    document.getElementById("ultimateEnding").classList.add("hidden");
+    const pages = [
+        "welcome",
+        "passwordPage",
+        "envelopePage",
+        "letterPage",
+        "chapter2",
+        "chapter3",
+        "finalChapter",
+        "birthdayReveal",
+        "celebrationScene",
+        "ultimateEnding"
+    ];
+
+    pages.forEach(function(id) {
+
+        const page = document.getElementById(id);
+
+        if (page) {
+            page.classList.add("hidden");
+        }
+
+    });
 
 }
 
