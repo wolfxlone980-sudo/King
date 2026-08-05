@@ -580,16 +580,24 @@ function showBirthdayLine() {
 
     if (birthdayLine >= birthdayLines.length) {
 
-        btn.innerHTML = "✨ Continue";
+    btn.innerHTML = "🎂 Let's Celebrate";
 
-        btn.style.display = "inline-block";
+    btn.style.display = "inline-block";
 
-        btn.onclick = showFinalMessage;
+    btn.onclick = function() {
 
-        return;
+        document
+            .getElementById("birthdayReveal")
+            .classList.add("hidden");
 
-    }
+        document
+            .getElementById("celebrationScene")
+            .classList.remove("hidden");
 
+    };
+
+    return;
+}
 
     /* Clear previous sentence */
 
