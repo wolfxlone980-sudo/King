@@ -528,33 +528,29 @@ function goToFinalChapter() {
 
 }
 
-
 /* =========================
-   FINAL CHAPTER
+   FINAL CHAPTER EXPERIENCE
 ========================= */
 
 const birthdayLines = [
 
-    "Today is not just another day...",
+    "Today is not just another day... 🤍",
 
-    "Because today, someone very special to me was born. ❤️",
+    "আজকের দিনটা একটু আলাদা। কারণ আজ এমন একজন মানুষের birthday, যে somehow আমার জীবনের গল্পে একটা আলাদা জায়গা করে নিয়েছে। ❤️",
 
-    "And somehow, life made sure our paths crossed again.",
+    "জীবনে কিছু মানুষকে আমরা plan করে পাই না... তারা হঠাৎ আসে, আর কখন যে এতটা important হয়ে যায়, সেটাও বুঝতে পারি না।",
 
-    "So today, I just want you to know...",
-
-    "I genuinely hope you always have a reason to smile.",
-
-    "I hope every little dream of yours finds its way to you.",
-
-    "And I hope you never forget how special you are. 🤍"
+    "তুইও ঠিক তেমনই একজন। কবে, কীভাবে তুই এতটা special হয়ে গেলি—সত্যি বলতে, আমি নিজেও জানি না। 🤍"
 
 ];
 
 let birthdayLine = 0;
+let birthdayTyping = null;
 
 
-/* Final → Birthday Reveal */
+/* =========================
+   OPEN FINAL SURPRISE
+========================= */
 
 function openFinalSurprise() {
 
@@ -570,47 +566,55 @@ function openFinalSurprise() {
         .getElementById("birthdayReveal")
         .style.display = "flex";
 
-
     birthdayLine = 0;
-
 
     document
         .getElementById("birthdayMessage")
         .innerHTML = "";
 
+    const btn =
+        document.getElementById("oneMoreBtn");
 
-    document
-        .getElementById("oneMoreBtn")
-        .style.display = "none";
-
+    btn.style.display = "none";
 
     showBirthdayLine();
 
 }
 
 
-/* Birthday Typing */
+/* =========================
+   TYPE ONE LINE
+========================= */
 
 function showBirthdayLine() {
 
     const box =
         document.getElementById("birthdayMessage");
 
+    const btn =
+        document.getElementById("oneMoreBtn");
+
+
+    /* All lines finished */
 
     if (birthdayLine >= birthdayLines.length) {
 
-        setTimeout(function() {
+        btn.innerHTML = "✨ Continue";
 
-            document
-                .getElementById("oneMoreBtn")
-                .style.display =
-                "inline-block";
+        btn.style.display = "inline-block";
 
-        }, 700);
+        btn.onclick = showFinalMessage;
 
         return;
 
     }
+
+
+    /* Clear previous sentence */
+
+    box.innerHTML = "";
+
+    btn.style.display = "none";
 
 
     let text =
@@ -618,28 +622,41 @@ function showBirthdayLine() {
 
     let i = 0;
 
-    box.innerHTML = "";
 
+    /* Typewriter */
 
-    let typing =
+    birthdayTyping =
         setInterval(function() {
 
-            box.innerHTML +=
-                text.charAt(i);
+            box.innerHTML += text.charAt(i);
 
             i++;
 
 
             if (i >= text.length) {
 
-                clearInterval(typing);
+                clearInterval(birthdayTyping);
+
+                birthdayTyping = null;
 
                 birthdayLine++;
 
-                setTimeout(
-                    showBirthdayLine,
-                    900
-                );
+                /*
+                   IMPORTANT:
+                   এখানে আর automatic
+                   next sentence আসবে না।
+
+                   User নিজে Continue চাপবে।
+                */
+
+                btn.innerHTML =
+                    "Continue ✨";
+
+                btn.style.display =
+                    "inline-block";
+
+                btn.onclick =
+                    showBirthdayLine;
 
             }
 
@@ -658,14 +675,12 @@ function showFinalMessage() {
         .getElementById("birthdayReveal")
         .classList.add("hidden");
 
-
     const ending =
         document.getElementById("ultimateEnding");
 
     ending.classList.remove("hidden");
 
-    ending.style.display =
-        "flex";
+    ending.style.display = "flex";
 
 
     const box =
@@ -674,35 +689,20 @@ function showFinalMessage() {
 
     box.innerHTML = `
 
-I don't know what the future holds for us...
+Happy Birthday, Suma. 🎂❤️
 
-But I'm really glad that,
-somehow, our paths crossed again. 🤍
+তোর জন্য আমার একটাই wish—
 
-From a classroom argument
-to endless midnight conversations...
+তুই সবসময় হাসিস,
+নিজের মতো থাকিস,
+আর তোর ছোট-বড় সব dream
+একদিন সত্যি হোক। 🤍
 
-what a beautiful little journey
-it has been.
+আর আমাদের এই অদ্ভুত,
+সুন্দর গল্পটা...
 
-And if I could wish one thing for you today...
-
-I'd wish that life gives you
-the same happiness you've unknowingly
-brought into mine. ❤️
-
-Happy Birthday, Suma. 🎂🌸
-
-This whole little world you just walked through...
-
-was made just for you. ❤️
-
-21 August —
-your day, and now a little special to me too.
-
-Stay happy.
-Stay crazy.
-Stay exactly the way you are. 🤍
+এভাবেই যেন
+আরও অনেক সুন্দর chapter পায়। ❤️
 
 — From someone who's really glad
 you found your way back.
@@ -710,18 +710,4 @@ you found your way back.
     `;
 
 }
-
-
-/* =========================
-   START WEBSITE
-========================= */
-
-window.addEventListener("load", function() {
-
-    hideAllPages();
-
-    document
-        .getElementById("welcome")
-        .classList.remove("hidden");
-
-});
+      
