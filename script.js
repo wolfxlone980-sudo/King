@@ -88,7 +88,7 @@ function openEnvelope() {
 
 const lines = [
 
-    "Hey tui... ❤️,
+    "Hey tui... ❤️",
 
     "Haa... tokei bolchi. 😊",
 
@@ -96,9 +96,9 @@ const lines = [
 
     "Eta sudhu ekta website... na",
 
-    "Eta amar tor jonno banano ekta chutto surprise. 🤍",
+    "Eta amar tor jonno banano ekta chotto surprise. 🤍",
 
-    "so aste aste por...",
+    "So aste aste por...",
 
     "Golpota ekhono shesh hoyni... ✨"
 
