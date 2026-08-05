@@ -981,389 +981,466 @@ button:hover{
 }
 
 /* =========================
-   FINAL CHAPTER
+   FINAL CHAPTER — PREMIUM
 ========================= */
 
 #finalChapter,
 #birthdayReveal,
-#ultimateEnding{
-    width:100%;
-    min-height:100vh;
+#ultimateEnding {
+    width: 100%;
+    min-height: 100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    box-sizing: border-box;
 
-    padding:30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    position:relative;
-    z-index:5;
+    padding: 24px 18px;
 
-    box-sizing:border-box;
+    position: relative;
 }
 
 
-/* Final Intro */
+/* =========================
+   FINAL INTRO
+========================= */
 
-.finalReveal{
-    width:650px;
-    max-width:92%;
+.finalReveal {
+    width: min(620px, 92%);
 
-    text-align:center;
+    text-align: center;
 
-    padding:55px 35px;
+    padding: 48px 28px;
 
-    background:rgba(255,255,255,.06);
+    border-radius: 30px;
 
-    border:1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,0.055);
 
-    border-radius:30px;
+    border: 1px solid rgba(255,255,255,0.12);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter: blur(18px);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.45),
-        0 0 45px rgba(255,79,163,.12);
+        0 25px 70px rgba(0,0,0,0.45),
+        0 0 50px rgba(255,79,163,0.10);
 
-    animation:finalAppear 1.2s ease;
+    animation: finalIntro 1.2s ease;
 }
 
 
-.finalLabel{
-    font-size:13px;
+.finalLabel {
+    font-size: 12px;
 
-    letter-spacing:6px;
+    letter-spacing: 5px;
 
-    color:#ffc7dc;
+    color: #ffc4dc;
 
-    margin-bottom:25px;
+    margin-bottom: 24px;
 }
 
 
-.finalReveal h1{
-    color:white;
+.finalReveal h1 {
+    margin: 0 0 20px;
 
-    font-size:42px;
+    color: white;
 
-    margin-bottom:25px;
+    font-size: clamp(30px, 7vw, 44px);
+
+    line-height: 1.2;
 
     text-shadow:
-        0 0 20px rgba(255,79,163,.45);
+        0 0 25px rgba(255,79,163,0.35);
 }
 
 
-.finalHint{
-    color:#ddd;
+.finalHint {
+    color: #dcdcdc;
 
-    font-size:18px;
+    font-size: 17px;
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    margin-bottom:35px;
+    margin-bottom: 32px;
 }
 
 
-#openFinalBtn{
-    padding:16px 30px;
+#openFinalBtn {
+    padding: 15px 27px;
 
-    border:none;
+    border: none;
 
-    border-radius:40px;
+    border-radius: 50px;
 
-    background:#ff4fa3;
+    background: #ff4fa3;
 
-    color:white;
+    color: white;
 
-    font-size:16px;
+    font-size: 15px;
 
-    cursor:pointer;
+    cursor: pointer;
 
     box-shadow:
-        0 10px 35px rgba(255,79,163,.4);
+        0 10px 35px rgba(255,79,163,0.35);
 
-    transition:.4s ease;
+    transition: all 0.35s ease;
 }
 
 
-#openFinalBtn:hover{
-    transform:scale(1.06);
+#openFinalBtn:hover {
+    transform: translateY(-3px) scale(1.04);
 
     box-shadow:
-        0 0 35px rgba(255,79,163,.75);
+        0 15px 45px rgba(255,79,163,0.55);
 }
 
 
-/* Birthday Reveal */
+/* =========================
+   BIRTHDAY REVEAL
+========================= */
 
-#birthdayReveal{
-    text-align:center;
+#birthdayReveal {
+    text-align: center;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(255,79,163,.12),
-            transparent 55%
-        );
-}
-
-
-.birthdayContent{
-    max-width:700px;
-
-    animation:birthdayAppear 2s ease;
-}
-
-
-.tinyStars{
-    font-size:25px;
-
-    color:#ffd6e7;
-
-    margin-bottom:25px;
-
-    animation:starFloat 3s ease-in-out infinite;
-}
-
-
-.birthdaySmall{
-    color:#ddd;
-
-    font-size:16px;
-
-    letter-spacing:2px;
-
-    margin-bottom:20px;
-}
-
-
-.birthdayContent h1{
-    font-size:58px;
-
-    letter-spacing:5px;
-
-    color:white;
-
-    margin:0;
-
-    text-shadow:
-        0 0 20px rgba(255,79,163,.5),
-        0 0 50px rgba(255,79,163,.25);
-}
-
-
-.birthdayContent h2{
-    font-size:42px;
-
-    margin:15px 0 35px;
-
-    color:#ff9bc7;
-
-    text-shadow:
-        0 0 25px rgba(255,79,163,.6);
-}
-
-
-#birthdayMessage{
-    min-height:100px;
-
-    max-width:600px;
-
-    margin:auto;
-
-    color:#f5f5f5;
-
-    font-size:19px;
-
-    line-height:1.9;
-}
-
-
-#oneMoreBtn{
-    margin-top:35px;
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:40px;
-
-    background:transparent;
-
-    color:#ffc7dc;
-
-    border:1px solid rgba(255,199,220,.35);
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.4s ease;
-}
-
-
-#oneMoreBtn:hover{
-    background:rgba(255,79,163,.15);
-
-    transform:scale(1.05);
-
-    box-shadow:
-        0 0 25px rgba(255,79,163,.3);
-}
-
-
-/* Ultimate Ending */
-
-#ultimateEnding{
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,79,163,.18),
+            rgba(255,79,163,0.12),
             transparent 60%
         );
-
-    text-align:center;
 }
 
 
-.endingContent{
-    max-width:650px;
+.birthdayContent {
+    width: min(650px, 94%);
 
-    animation:endingReveal 2s ease;
+    max-height: calc(100vh - 48px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: birthdayReveal 1.3s ease;
 }
 
 
-.endingHeart{
-    font-size:55px;
+.tinyStars {
+    font-size: 22px;
 
-    margin-bottom:30px;
+    color: #ffd3e5;
 
-    animation:heartBeat 2s infinite;
+    margin-bottom: 16px;
+
+    animation: floatingStars 3s ease-in-out infinite;
 }
 
 
-#ultimateText{
-    color:white;
+.birthdaySmall {
+    color: #d6d6d6;
 
-    font-size:21px;
+    font-size: 14px;
 
-    line-height:2;
+    letter-spacing: 1.5px;
 
-    white-space:pre-line;
+    margin: 0 0 14px;
+}
+
+
+.birthdayContent h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(34px, 9vw, 58px);
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
 
     text-shadow:
-        0 0 15px rgba(255,255,255,.15);
+        0 0 25px rgba(255,79,163,0.45);
 }
 
 
-/* Animations */
+.birthdayContent h2 {
+    margin: 10px 0 25px;
 
-@keyframes finalAppear{
+    color: #ff9bc7;
 
-    from{
-        opacity:0;
-        transform:translateY(30px) scale(.96);
-        filter:blur(5px);
+    font-size: clamp(27px, 7vw, 40px);
+
+    text-shadow:
+        0 0 25px rgba(255,79,163,0.5);
+}
+
+
+/* Typed sentence */
+
+#birthdayMessage {
+    width: min(580px, 100%);
+
+    min-height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 8px;
+
+    box-sizing: border-box;
+
+    color: #f5f5f5;
+
+    font-size: clamp(17px, 4.5vw, 20px);
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* Continue button */
+
+#oneMoreBtn {
+    margin-top: 22px;
+
+    padding: 13px 27px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,199,220,0.35);
+
+    background: rgba(255,79,163,0.08);
+
+    color: #ffc7dc;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+}
+
+
+#oneMoreBtn:hover {
+    transform: scale(1.05);
+
+    background: rgba(255,79,163,0.16);
+
+    box-shadow:
+        0 0 25px rgba(255,79,163,0.25);
+}
+
+
+/* =========================
+   ULTIMATE ENDING
+========================= */
+
+#ultimateEnding {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,79,163,0.16),
+            transparent 65%
+        );
+}
+
+
+.endingContent {
+    width: min(650px, 94%);
+
+    animation: ultimateAppear 1.8s ease;
+}
+
+
+.endingHeart {
+    font-size: 48px;
+
+    margin-bottom: 20px;
+
+    animation: heartBeat 2s infinite;
+}
+
+
+#ultimateText {
+    color: #f8f8f8;
+
+    font-size: clamp(16px, 4.3vw, 19px);
+
+    line-height: 1.75;
+
+    white-space: pre-line;
+
+    text-align: center;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes finalIntro {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+
+        filter: blur(5px);
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-        filter:blur(0);
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
     }
 
 }
 
 
-@keyframes birthdayAppear{
+@keyframes birthdayReveal {
 
-    from{
-        opacity:0;
-        transform:scale(.9);
-        filter:blur(8px);
+    from {
+        opacity: 0;
+
+        transform: scale(0.94);
+
+        filter: blur(7px);
     }
 
-    to{
-        opacity:1;
-        transform:scale(1);
-        filter:blur(0);
-    }
+    to {
+        opacity: 1;
 
-}
+        transform: scale(1);
 
-
-@keyframes endingReveal{
-
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
+        filter: blur(0);
     }
 
 }
 
 
-@keyframes starFloat{
+@keyframes ultimateAppear {
 
-    0%,100%{
-        transform:translateY(0);
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+
+        filter: blur(5px);
     }
 
-    50%{
-        transform:translateY(-8px);
-    }
+    to {
+        opacity: 1;
 
-}
+        transform: translateY(0);
 
-
-@keyframes heartBeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.12);
+        filter: blur(0);
     }
 
 }
 
 
-/* Mobile */
+@keyframes floatingStars {
 
-@media(max-width:768px){
-
-    .finalReveal{
-        padding:45px 22px;
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    .finalReveal h1{
-        font-size:32px;
-    }
-
-    .finalHint{
-        font-size:16px;
-    }
-
-    .birthdayContent h1{
-        font-size:38px;
-        letter-spacing:3px;
-    }
-
-    .birthdayContent h2{
-        font-size:32px;
-    }
-
-    #birthdayMessage{
-        font-size:18px;
-    }
-
-    #ultimateText{
-        font-size:18px;
-        line-height:1.9;
+    50% {
+        transform: translateY(-6px);
     }
 
 }
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #finalChapter,
+    #birthdayReveal,
+    #ultimateEnding {
+        padding: 18px 14px;
+    }
+
+
+    .finalReveal {
+        padding: 40px 20px;
+    }
+
+
+    .finalLabel {
+        letter-spacing: 4px;
+
+        font-size: 10px;
+    }
+
+
+    .finalHint {
+        font-size: 15px;
+    }
+
+
+    .birthdayContent {
+        max-height: calc(100vh - 36px);
+    }
+
+
+    .birthdaySmall {
+        font-size: 12px;
+    }
+
+
+    #birthdayMessage {
+        min-height: 125px;
+
+        font-size: 17px;
+
+        line-height: 1.75;
+    }
+
+
+    #oneMoreBtn {
+        margin-top: 16px;
+
+        padding: 12px 24px;
+    }
+
+
+    #ultimateText {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+}
+    
