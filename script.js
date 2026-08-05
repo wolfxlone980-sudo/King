@@ -88,19 +88,17 @@ function openEnvelope() {
 
 const lines = [
 
-    "Hey tui... ❤️",
+    "Hey tui... ❤️,
 
     "Haa... tokei bolchi. 😊",
 
-    "Aj tor Birthday... 🎂",
-
     "Hoyto vabchis...",
 
-    "Eta sudhu ekta website na...",
+    "Eta sudhu ekta website... na",
 
-    "Eta amar tor jonno banano ekta chotto surprise. 🤍",
+    "Eta amar tor jonno banano ekta chutto surprise. 🤍",
 
-    "Tai aste aste por...",
+    "so aste aste por...",
 
     "Golpota ekhono shesh hoyni... ✨"
 
@@ -556,32 +554,14 @@ let birthdayTyping = null;
 function openFinalSurprise() {
 
     document
-        .getElementById("finalChapter")
+        .getElementById("birthdayReveal")
         .classList.add("hidden");
 
     document
-        .getElementById("birthdayReveal")
+        .getElementById("celebrationScene")
         .classList.remove("hidden");
 
-    document
-        .getElementById("birthdayReveal")
-        .style.display = "flex";
-
-    birthdayLine = 0;
-
-    document
-        .getElementById("birthdayMessage")
-        .innerHTML = "";
-
-    const btn =
-        document.getElementById("oneMoreBtn");
-
-    btn.style.display = "none";
-
-    showBirthdayLine();
-
 }
-
 
 /* =========================
    TYPE ONE LINE
