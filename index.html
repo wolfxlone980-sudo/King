@@ -278,7 +278,58 @@
     </div>
 
 </section>
+    
+<!-- =========================
+     BIRTHDAY CELEBRATION
+========================= -->
 
+<section id="celebrationScene" class="hidden">
+
+    <div class="celebrationContent">
+
+        <p class="celebrationIntro">
+            But wait... 🤍
+        </p>
+
+        <h2>
+            Your birthday deserves a little celebration. 🎂
+        </h2>
+
+        <div class="celebrationImageBox">
+
+            <img
+                src="birthday-surprise.png"
+                alt="Birthday Celebration"
+                class="celebrationImage"
+            >
+
+        </div>
+
+        <p class="wishInstruction">
+            The candles are waiting... 🕯️
+            <br>
+            <span>Make a wish.</span>
+        </p>
+
+        <button id="makeWishBtn" onclick="startCelebration()">
+            🕯️ Make a Wish
+        </button>
+
+        <div id="celebrationMessage"></div>
+
+        <button id="celebrationContinueBtn"
+                onclick="goToFinalMessage()"
+                style="display:none;">
+            Continue ✨
+        </button>
+
+    </div>
+
+    <!-- Celebration Confetti -->
+
+    <div id="celebrationConfetti"></div>
+
+</section>
     <script src="script.js"></script>
 
 </body>
