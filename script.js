@@ -61,6 +61,7 @@ function nextPage() {
     document
         .getElementById("passwordPage")
         .classList.remove("hidden");
+    cinematicEnter("passwordPage");
 
 }
 
