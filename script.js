@@ -299,6 +299,9 @@ function showChapter2Line() {
     const btn =
         document.getElementById("chapter2NextBtn");
 
+    /* =========================
+       END OF CHAPTER 2
+    ========================= */
 
     if (chapter2Line >= chapter2Lines.length) {
 
@@ -315,6 +318,10 @@ function showChapter2Line() {
 
     }
 
+
+    /* =========================
+       CURRENT LINE
+    ========================= */
 
     const text =
         chapter2Lines[chapter2Line];
@@ -347,9 +354,14 @@ function showChapter2Line() {
 
     let i = 0;
 
+
     btn.style.display =
         "none";
 
+
+    /* =========================
+       TYPING
+    ========================= */
 
     chapter2Typing =
         setInterval(function () {
@@ -359,17 +371,23 @@ function showChapter2Line() {
 
             i++;
 
+
             if (i >= text.length) {
 
                 clearInterval(chapter2Typing);
 
+
+                /* Move to next line */
                 chapter2Line++;
 
+
+                /* Continue button */
                 btn.innerHTML =
                     "Continue ✨";
 
                 btn.style.display =
                     "inline-block";
+
 
                 btn.onclick =
                     showChapter2Line;
