@@ -282,28 +282,60 @@
 <!-- =========================
      BIRTHDAY CELEBRATION
 ========================= -->
+<!-- =========================
+     BIRTHDAY CELEBRATION
+========================= -->
 
 <section id="celebrationScene" class="hidden">
 
     <div class="celebrationContent">
+
+        <div class="celebrationStars">
+            ✦ ✧ ✦ ✧ ✦
+        </div>
 
         <p class="celebrationIntro">
             But wait... 🤍
         </p>
 
         <h2>
-            Your birthday deserves a little celebration. 🎂
+            Your birthday deserves
+            <br>
+            a little celebration. 🎂
         </h2>
 
-        <div class="celebrationImageBox">
+        <!-- Cake -->
+        <div class="cakeScene">
 
-            <img
-                src="birthday-surprise.png"
-                alt="Birthday Celebration"
-                class="celebrationImage"
-            >
+            <div class="cakeCandles">
+
+                <span class="candle">
+                    <span class="flame">🔥</span>
+                </span>
+
+                <span class="candle">
+                    <span class="flame">🔥</span>
+                </span>
+
+                <span class="candle">
+                    <span class="flame">🔥</span>
+                </span>
+
+            </div>
+
+            <div class="cakeTop">
+                💖
+            </div>
+
+            <div class="cakeBody">
+                🎂
+            </div>
 
         </div>
+
+        <p class="cakeName">
+            A little cake for <b>Suma</b> ❤️
+        </p>
 
         <p class="wishInstruction">
             The candles are waiting... 🕯️
@@ -311,25 +343,29 @@
             <span>Make a wish.</span>
         </p>
 
-        <button id="makeWishBtn" onclick="startCelebration()">
+        <button
+            id="makeWishBtn"
+            onclick="startCelebration()">
             🕯️ Make a Wish
         </button>
 
         <div id="celebrationMessage"></div>
 
-        <button id="celebrationContinueBtn"
-                onclick="goToFinalMessage()"
-                style="display:none;">
+        <button
+            id="celebrationContinueBtn"
+            onclick="goToFinalMessage()"
+            style="display:none;">
             Continue ✨
         </button>
 
     </div>
 
-    <!-- Celebration Confetti -->
+    <!-- Celebration Effects -->
 
     <div id="celebrationConfetti"></div>
 
 </section>
+
     <script src="script.js"></script>
 
 </body>
