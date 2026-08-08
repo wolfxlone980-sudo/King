@@ -877,6 +877,7 @@ function goToFinalMessage() {
             return;
         }
 
+
         const paragraph =
             document.createElement("p");
 
@@ -884,6 +885,14 @@ function goToFinalMessage() {
             "finalTypingLine";
 
         box.appendChild(paragraph);
+
+
+        /* Automatically bring the new line into view */
+
+        paragraph.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
 
         const text =
@@ -903,29 +912,25 @@ function goToFinalMessage() {
 
                 if (i >= text.length) {
 
-    clearInterval(typing);
+                    clearInterval(typing);
 
-    currentLine++;
+                    currentLine++;
 
-    setTimeout(function () {
 
-        typeFinalLine();
+                    setTimeout(function () {
 
-        setTimeout(function () {
+                        typeFinalLine();
 
-            paragraph.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+                    }, 1200);
 
-        }, 100);
+                }
 
-    }, 1200);
+            }, 45);
 
-}
+    }
 
-}, 45);
 
+    /* Start typing */
 
     setTimeout(function () {
 
