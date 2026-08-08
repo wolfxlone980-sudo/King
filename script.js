@@ -107,6 +107,7 @@ function openEnvelope() {
     document
         .getElementById("letterPage")
         .classList.remove("hidden");
+   cinematicEnter("letterPage");
 
     document
         .getElementById("nextChapterBtn")
