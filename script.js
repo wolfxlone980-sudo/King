@@ -570,6 +570,7 @@ function goToFinalChapter() {
         document.getElementById("finalChapter");
 
     finalPage.classList.remove("hidden");
+   cinematicEnter("finalChapter");
 
     finalPage.style.display =
         "flex";
