@@ -737,6 +737,7 @@ function goToCelebration() {
         document.getElementById("celebrationScene");
 
     celebration.classList.remove("hidden");
+   cinematicEnter("celebrationScene");
 
     celebration.style.display =
         "flex";
