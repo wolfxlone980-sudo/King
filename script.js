@@ -17,7 +17,7 @@ function hideAllPages() {
         "ultimateEnding"
     ];
 
-    pages.forEach(function(id) {
+    pages.forEach(function (id) {
 
         const page = document.getElementById(id);
 
@@ -51,7 +51,7 @@ function nextPage() {
 
 function checkPassword() {
 
-    let pass = document
+    const pass = document
         .getElementById("password")
         .value
         .toLowerCase()
@@ -118,6 +118,7 @@ const lines = [
 ];
 
 let line = 0;
+let chapter1Typing = null;
 
 
 function startLetter() {
@@ -137,7 +138,7 @@ function showNextLine() {
 
     if (line >= lines.length) {
 
-        setTimeout(function() {
+        setTimeout(function () {
 
             document
                 .getElementById("nextChapterBtn")
@@ -149,33 +150,34 @@ function showNextLine() {
 
     }
 
-    let text = lines[line];
+    const text = lines[line];
 
     let i = 0;
 
-    let box =
+    const box =
         document.getElementById("typewriter");
 
 
-    let typing = setInterval(function() {
+    chapter1Typing =
+        setInterval(function () {
 
-        box.innerHTML += text.charAt(i);
+            box.innerHTML += text.charAt(i);
 
-        i++;
+            i++;
 
-        if (i >= text.length) {
+            if (i >= text.length) {
 
-            clearInterval(typing);
+                clearInterval(chapter1Typing);
 
-            box.innerHTML += "<br><br>";
+                box.innerHTML += "<br><br>";
 
-            line++;
+                line++;
 
-            setTimeout(showNextLine, 1200);
+                setTimeout(showNextLine, 1200);
 
-        }
+            }
 
-    }, 50);
+        }, 50);
 
 }
 
@@ -268,6 +270,7 @@ const chapter2Lines = [
 ];
 
 let chapter2Line = 0;
+let chapter2Typing = null;
 
 
 function startChapter2() {
@@ -308,7 +311,7 @@ function showChapter2Line() {
     }
 
 
-    let text =
+    const text =
         chapter2Lines[chapter2Line];
 
 
@@ -316,23 +319,15 @@ function showChapter2Line() {
 
 
     if (text.includes("28 November 2023")) {
-
         specialClass = "dateMoment";
-
     }
-
 
     if (text.includes("27 April 2024")) {
-
         specialClass = "sadMoment";
-
     }
 
-
     if (text.includes("2 June 2025")) {
-
         specialClass = "returnMoment";
-
     }
 
 
@@ -351,18 +346,17 @@ function showChapter2Line() {
         "none";
 
 
-    let typing =
-        setInterval(function() {
+    chapter2Typing =
+        setInterval(function () {
 
             textBox.innerHTML +=
                 text.charAt(i);
 
             i++;
 
-
             if (i >= text.length) {
 
-                clearInterval(typing);
+                clearInterval(chapter2Typing);
 
                 chapter2Line++;
 
@@ -434,6 +428,7 @@ const chapter3Lines = [
 ];
 
 let chapter3Line = 0;
+let chapter3Typing = null;
 
 
 function startChapter3() {
@@ -478,7 +473,7 @@ function showNextChapter3Line() {
     }
 
 
-    let text =
+    const text =
         chapter3Lines[chapter3Line];
 
 
@@ -490,18 +485,17 @@ function showNextChapter3Line() {
         "none";
 
 
-    let typing =
-        setInterval(function() {
+    chapter3Typing =
+        setInterval(function () {
 
             box.innerHTML +=
                 text.charAt(i);
 
             i++;
 
-
             if (i >= text.length) {
 
-                clearInterval(typing);
+                clearInterval(chapter3Typing);
 
                 chapter3Line++;
 
@@ -522,7 +516,7 @@ function showNextChapter3Line() {
 
 
 /* =========================
-   CHAPTER 3 → FINAL
+   CHAPTER 3 → FINAL CHAPTER
 ========================= */
 
 function goToFinalChapter() {
@@ -539,14 +533,16 @@ function goToFinalChapter() {
 
 }
 
+
 /* =========================
-   FINAL CHAPTER EXPERIENCE
+   BIRTHDAY WISH
 ========================= */
+
 const birthdayLines = [
 
     "আজকের দিনটা শুধু একটা date না... 🤍",
 
-    "আজ এমন একজন মানুষের birthday, যে somehow আমার গল্পের একটা খুব special part হয়ে গেছে। ❤️",
+    "আজ এমন একজন মানুষের birthday, যে somehow আমার গল্পের একটা very special part হয়ে গেছে। ❤️",
 
     "তোর জন্য আমার একটাই wish—",
 
@@ -562,22 +558,49 @@ let birthdayTyping = null;
 
 /* =========================
    OPEN FINAL SURPRISE
+   FINAL CHAPTER → BIRTHDAY WISH
 ========================= */
 
 function openFinalSurprise() {
 
-    document
-        .getElementById("birthdayReveal")
-        .classList.add("hidden");
+    hideAllPages();
 
     document
-        .getElementById("celebrationScene")
+        .getElementById("birthdayReveal")
         .classList.remove("hidden");
+
+    document
+        .getElementById("birthdayReveal")
+        .style.display = "flex";
+
+
+    birthdayLine = 0;
+
+
+    const box =
+        document.getElementById("birthdayMessage");
+
+    box.innerHTML = "";
+
+
+    const btn =
+        document.getElementById("oneMoreBtn");
+
+    btn.innerHTML =
+        "Continue ✨";
+
+    btn.style.display =
+        "none";
+
+
+    showBirthdayLine();
 
 }
 
+
 /* =========================
-   TYPE ONE LINE
+   BIRTHDAY TYPEWRITER
+   ONE SENTENCE AT A TIME
 ========================= */
 
 function showBirthdayLine() {
@@ -589,48 +612,40 @@ function showBirthdayLine() {
         document.getElementById("oneMoreBtn");
 
 
-    /* All lines finished */
-
     if (birthdayLine >= birthdayLines.length) {
 
-    btn.innerHTML = "🎂 Let's Celebrate";
+        btn.innerHTML =
+            "🎂 Let's Celebrate";
 
-    btn.style.display = "inline-block";
+        btn.style.display =
+            "inline-block";
 
-    btn.onclick = function() {
+        btn.onclick =
+            goToCelebration;
 
-        document
-            .getElementById("birthdayReveal")
-            .classList.add("hidden");
+        return;
 
-        document
-            .getElementById("celebrationScene")
-            .classList.remove("hidden");
+    }
 
-    };
-
-    return;
-}
-
-    /* Clear previous sentence */
 
     box.innerHTML = "";
 
-    btn.style.display = "none";
 
-
-    let text =
+    const text =
         birthdayLines[birthdayLine];
+
 
     let i = 0;
 
+    btn.style.display =
+        "none";
 
-    /* Typewriter */
 
     birthdayTyping =
-        setInterval(function() {
+        setInterval(function () {
 
-            box.innerHTML += text.charAt(i);
+            box.innerHTML +=
+                text.charAt(i);
 
             i++;
 
@@ -643,12 +658,10 @@ function showBirthdayLine() {
 
                 birthdayLine++;
 
-                /*
-                   IMPORTANT:
-                   এখানে আর automatic
-                   next sentence আসবে না।
 
-                   User নিজে Continue চাপবে।
+                /*
+                   No automatic next sentence.
+                   User must press Continue.
                 */
 
                 btn.innerHTML =
@@ -668,21 +681,159 @@ function showBirthdayLine() {
 
 
 /* =========================
-   FINAL MESSAGE
+   BIRTHDAY WISH → CELEBRATION
 ========================= */
 
-function showFinalMessage() {
+function goToCelebration() {
+
+    hideAllPages();
+
+    const celebration =
+        document.getElementById("celebrationScene");
+
+    celebration.classList.remove("hidden");
+
+    celebration.style.display =
+        "flex";
+
+
+    const message =
+        document.getElementById("celebrationMessage");
+
+    message.innerHTML = "";
+
 
     document
-        .getElementById("birthdayReveal")
-        .classList.add("hidden");
+        .getElementById("celebrationContinueBtn")
+        .style.display = "none";
+
+
+    document
+        .getElementById("makeWishBtn")
+        .style.display = "inline-block";
+
+
+    document
+        .getElementById("celebrationConfetti")
+        .innerHTML = "";
+
+}
+
+
+/* =========================
+   MAKE A WISH
+========================= */
+
+function startCelebration() {
+
+    const wishButton =
+        document.getElementById("makeWishBtn");
+
+    const message =
+        document.getElementById("celebrationMessage");
+
+    const continueBtn =
+        document.getElementById("celebrationContinueBtn");
+
+
+    wishButton.style.display =
+        "none";
+
+
+    message.innerHTML = `
+        <p class="wishMoment">
+            Close your eyes... 🤍
+            <br><br>
+            Make a wish. ✨
+        </p>
+    `;
+
+
+    setTimeout(function () {
+
+        message.innerHTML = `
+            <p class="wishMoment">
+                And now... make it come true. ❤️
+            </p>
+        `;
+
+
+        createConfetti();
+
+
+    }, 2200);
+
+
+    setTimeout(function () {
+
+        continueBtn.style.display =
+            "inline-block";
+
+    }, 4200);
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const container =
+        document.getElementById("celebrationConfetti");
+
+    const pieces = [
+        "🎉",
+        "🎊",
+        "✨",
+        "💖",
+        "💫",
+        "🌸"
+    ];
+
+
+    container.innerHTML = "";
+
+
+    for (let i = 0; i < 35; i++) {
+
+        const piece =
+            document.createElement("span");
+
+        piece.innerHTML =
+            pieces[Math.floor(Math.random() * pieces.length)];
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+        piece.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        piece.classList.add("confettiPiece");
+
+        container.appendChild(piece);
+
+    }
+
+}
+
+
+/* =========================
+   CELEBRATION → FINAL MESSAGE
+========================= */
+
+function goToFinalMessage() {
+
+    hideAllPages();
 
     const ending =
         document.getElementById("ultimateEnding");
 
     ending.classList.remove("hidden");
 
-    ending.style.display = "flex";
+    ending.style.display =
+        "flex";
 
 
     const box =
@@ -691,25 +842,78 @@ function showFinalMessage() {
 
     box.innerHTML = `
 
-Happy Birthday, Suma. 🎂❤️
+        <div class="finalWish">
 
-তোর জন্য আমার একটাই wish—
+            <p>
+                I don't know what the future holds for us...
+            </p>
 
-তুই সবসময় হাসিস,
-নিজের মতো থাকিস,
-আর তোর ছোট-বড় সব dream
-একদিন সত্যি হোক। 🤍
+            <p>
+                But I'm really glad that,
+                somehow, our paths crossed again. 🤍
+            </p>
 
-আর আমাদের এই অদ্ভুত,
-সুন্দর গল্পটা...
+            <p>
+                From a classroom argument
+                to endless midnight conversations...
+            </p>
 
-এভাবেই যেন
-আরও অনেক সুন্দর chapter পায়। ❤️
+            <p>
+                what a beautiful little journey
+                it has been.
+            </p>
 
-— From someone who's really glad
-you found your way back.
+            <p>
+                And if I could wish one thing for you today...
+            </p>
+
+            <p>
+                I'd wish that life gives you
+                the same happiness you've unknowingly
+                brought into mine. ❤️
+            </p>
+
+            <p>
+                This whole little world you just walked through...
+            </p>
+
+            <p>
+                was made just for you. ❤️
+            </p>
+
+            <p>
+                21 August —
+                your day, and now a little special to me too.
+            </p>
+
+            <p>
+                Stay happy.
+                Stay crazy.
+                Stay exactly the way you are. 🤍
+            </p>
+
+            <p>
+                — From someone who's really glad
+                you found your way back.
+            </p>
+
+        </div>
 
     `;
 
 }
-      
+
+
+/* =========================
+   PAGE LOAD
+========================= */
+
+window.addEventListener("load", function () {
+
+    hideAllPages();
+
+    document
+        .getElementById("welcome")
+        .classList.remove("hidden");
+
+});
