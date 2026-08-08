@@ -1876,3 +1876,463 @@ button:hover{
     }
 
 }
+/* =========================
+   CELEBRATION SCENE
+========================= */
+
+#celebrationScene {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,79,163,0.10),
+            transparent 65%
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================
+   CELEBRATION CONTENT
+========================= */
+
+.celebrationContent {
+    width: min(650px, 94%);
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: celebrationAppear 1.2s ease;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.celebrationIntro {
+    margin: 0 0 15px;
+
+    color: #dcdcdc;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.celebrationContent h2 {
+    margin: 0 0 25px;
+
+    max-width: 600px;
+
+    color: white;
+
+    font-size: clamp(25px, 6vw, 38px);
+
+    line-height: 1.35;
+
+    text-shadow:
+        0 0 20px rgba(255,79,163,0.45);
+}
+
+
+/* =========================
+   CELEBRATION IMAGE
+========================= */
+
+.celebrationImageBox {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin: 10px auto 25px;
+}
+
+.celebrationImage {
+    width: 94%;
+
+    max-width: 600px;
+
+    display: block;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 25px rgba(255,105,180,0.30),
+        0 0 60px rgba(255,105,180,0.15);
+
+    animation: celebrationImageAppear 1.5s ease;
+}
+
+
+/* =========================
+   WISH INSTRUCTION
+========================= */
+
+.wishInstruction {
+    margin: 5px 0 0;
+
+    color: #e5e5e5;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.wishInstruction span {
+    color: #ff9bc7;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   MAKE A WISH BUTTON
+========================= */
+
+#makeWishBtn {
+    margin-top: 25px;
+
+    padding: 15px 32px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ff4fa3;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px rgba(255,79,163,0.35);
+
+    transition: all 0.35s ease;
+}
+
+#makeWishBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(255,79,163,0.65);
+}
+
+
+/* =========================
+   CELEBRATION MESSAGE
+========================= */
+
+#celebrationMessage {
+    width: 100%;
+
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    color: #f5f5f5;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+.wishMoment {
+    margin: 0;
+
+    animation: wishAppear 1s ease;
+
+    text-shadow:
+        0 0 18px rgba(255,79,163,0.35);
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+#celebrationContinueBtn {
+    margin-top: 20px;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(255,199,220,0.35);
+
+    border-radius: 50px;
+
+    background: rgba(255,79,163,0.10);
+
+    color: #ffc7dc;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,79,163,0.25);
+
+    transition: all 0.35s ease;
+}
+
+#celebrationContinueBtn:hover {
+    transform: scale(1.06);
+
+    background: rgba(255,79,163,0.18);
+
+    box-shadow:
+        0 0 30px rgba(255,79,163,0.45);
+}
+
+
+/* =========================
+   CONFETTI CONTAINER
+========================= */
+
+#celebrationConfetti {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   CONFETTI PIECES
+========================= */
+
+.confettiPiece {
+    position: absolute;
+
+    top: -50px;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    animation:
+        celebrationConfettiFall 4.5s linear forwards;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes celebrationAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+
+}
+
+
+@keyframes celebrationImageAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.90);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes wishAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+
+        filter: blur(0);
+    }
+
+}
+
+
+@keyframes celebrationConfettiFall {
+
+    0% {
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #celebrationScene {
+        min-height: 100vh;
+
+        padding: 30px 15px;
+    }
+
+
+    .celebrationContent {
+        width: 100%;
+
+        max-width: 430px;
+    }
+
+
+    .celebrationIntro {
+        font-size: 15px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .celebrationContent h2 {
+        font-size: 27px;
+
+        line-height: 1.35;
+
+        margin-bottom: 20px;
+    }
+
+
+    .celebrationImage {
+        width: 92%;
+
+        border-radius: 18px;
+    }
+
+
+    .wishInstruction {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    #makeWishBtn {
+        margin-top: 22px;
+
+        padding: 14px 28px;
+
+        font-size: 15px;
+    }
+
+
+    #celebrationMessage {
+        min-height: 100px;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+    }
+
+
+    #celebrationContinueBtn {
+        margin-top: 15px;
+
+        padding: 13px 27px;
+
+        font-size: 15px;
+    }
+
+}
