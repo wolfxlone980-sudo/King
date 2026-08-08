@@ -2336,3 +2336,17 @@ button:hover{
     }
 
 }
+/* =========================
+   CINEMATIC PAGE TRANSITION
+========================= */
+
+.page,
+#chapter3,
+#finalChapter,
+#birthdayReveal,
+#celebrationScene,
+#ultimateEnding {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
