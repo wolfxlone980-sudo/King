@@ -85,6 +85,7 @@ function checkPassword() {
         document
             .getElementById("envelopePage")
             .classList.remove("hidden");
+       cinematicEnter("envelopePage");
 
     } else {
 
