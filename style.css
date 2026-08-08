@@ -2350,3 +2350,22 @@ button:hover{
         opacity 0.7s ease,
         transform 0.7s ease;
 }
+/* =========================
+   CINEMATIC FADE
+========================= */
+
+.cinematic-enter {
+    animation: cinematicEnter 0.8s ease forwards;
+}
+
+@keyframes cinematicEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
