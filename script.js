@@ -924,6 +924,8 @@ function goToFinalMessage() {
 
 }
 
+}, 45);
+
 
     setTimeout(function () {
 
