@@ -903,21 +903,26 @@ function goToFinalMessage() {
 
                 if (i >= text.length) {
 
-                    clearInterval(typing);
+    clearInterval(typing);
 
-                    currentLine++;
+    currentLine++;
 
-                    setTimeout(function () {
+    setTimeout(function () {
 
-                        typeFinalLine();
+        typeFinalLine();
 
-                    }, 1200);
+        setTimeout(function () {
 
-                }
+            paragraph.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
 
-            }, 45);
+        }, 100);
 
-    }
+    }, 1200);
+
+}
 
 
     setTimeout(function () {
