@@ -429,6 +429,7 @@ function goToChapter3() {
     document
         .getElementById("chapter3")
         .classList.remove("hidden");
+   cinematicEnter("chapter3");
 
     startChapter3();
 
