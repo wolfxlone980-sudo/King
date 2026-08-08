@@ -819,8 +819,10 @@ function createConfetti() {
 }
 
 
+
 /* =========================
    CELEBRATION → FINAL MESSAGE
+   CINEMATIC TYPING ENDING
 ========================= */
 
 function goToFinalMessage() {
@@ -831,78 +833,100 @@ function goToFinalMessage() {
         document.getElementById("ultimateEnding");
 
     ending.classList.remove("hidden");
-
-    ending.style.display =
-        "flex";
-
+    ending.style.display = "flex";
 
     const box =
         document.getElementById("ultimateText");
 
+    box.innerHTML = "";
 
-    box.innerHTML = `
+    const finalLines = [
 
-        <div class="finalWish">
+        "I don't know what the future holds for us...",
 
-            <p>
-                I don't know what the future holds for us...
-            </p>
+        "But I'm really glad that, somehow, our paths crossed again. 🤍",
 
-            <p>
-                But I'm really glad that,
-                somehow, our paths crossed again. 🤍
-            </p>
+        "From a classroom argument to endless midnight conversations...",
 
-            <p>
-                From a classroom argument
-                to endless midnight conversations...
-            </p>
+        "কী সুন্দর একটা little journey হয়ে গেছে, তাই না? ❤️",
 
-            <p>
-                what a beautiful little journey
-                it has been.
-            </p>
+        "আর যদি আজ তোর জন্য একটা wish করতে পারতাম...",
 
-            <p>
-                And if I could wish one thing for you today...
-            </p>
+        "তাহলে চাইতাম, life তোকে ঠিক সেই happiness-টাই দিক, যেটা তুই unknowingly আমার জীবনে নিয়ে এসেছিস। 🤍",
 
-            <p>
-                I'd wish that life gives you
-                the same happiness you've unknowingly
-                brought into mine. ❤️
-            </p>
+        "This whole little world you just walked through...",
 
-            <p>
-                This whole little world you just walked through...
-            </p>
+        "এটা শুধু একটা website ছিল না।",
 
-            <p>
-                was made just for you. ❤️
-            </p>
+        "এটা ছিল আমার মনে জমে থাকা কিছু কথা... শুধু তোর জন্য। ❤️",
 
-            <p>
-                21 August —
-                your day, and now a little special to me too.
-            </p>
+        "21 August — তোর day, আর somehow এখন আমার কাছেও একটু special একটা দিন।",
 
-            <p>
-                Stay happy.
-                Stay crazy.
-                Stay exactly the way you are. 🤍
-            </p>
+        "সবসময় happy থাকিস। হাসিস। আর নিজের মতোই থাকিস। 🤍",
 
-            <p>
-                — From someone who's really glad
-                you found your way back.
-            </p>
+        "— From someone who's really glad you found your way back. ❤️"
 
-        </div>
+    ];
 
-    `;
+    let currentLine = 0;
+
+
+    function typeFinalLine() {
+
+        if (currentLine >= finalLines.length) {
+            return;
+        }
+
+        const paragraph =
+            document.createElement("p");
+
+        paragraph.className =
+            "finalTypingLine";
+
+        box.appendChild(paragraph);
+
+
+        const text =
+            finalLines[currentLine];
+
+        let i = 0;
+
+
+        const typing =
+            setInterval(function () {
+
+                paragraph.textContent +=
+                    text.charAt(i);
+
+                i++;
+
+
+                if (i >= text.length) {
+
+                    clearInterval(typing);
+
+                    currentLine++;
+
+                    setTimeout(function () {
+
+                        typeFinalLine();
+
+                    }, 1200);
+
+                }
+
+            }, 45);
+
+    }
+
+
+    setTimeout(function () {
+
+        typeFinalLine();
+
+    }, 1000);
 
 }
-
 
 /* =========================
    PAGE LOAD
