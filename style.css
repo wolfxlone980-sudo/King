@@ -1605,4 +1605,176 @@ button:hover{
     }
 
 }
-    
+    /* =========================
+   BIRTHDAY PAGE - MOBILE FIX
+   Continue button always visible
+========================= */
+
+#birthdayReveal {
+    min-height: 100vh;
+    padding: 20px 14px 90px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.birthdayContent {
+    width: 100%;
+    max-width: 900px;
+    padding-bottom: 75px;
+}
+
+/* Birthday image slightly smaller on mobile */
+.birthdayImageBox {
+    margin: 18px auto;
+}
+
+.birthday-surprise-image {
+    width: 92%;
+    max-width: 850px;
+}
+
+/* Picture text */
+.pictureLine {
+    margin: 15px auto 18px;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Birthday typed message */
+#birthdayMessage {
+    min-height: 90px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* =========================
+   CONTINUE BUTTON
+   Always visible when shown
+========================= */
+
+#oneMoreBtn {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    z-index: 9999;
+
+    margin: 0;
+
+    min-width: 210px;
+
+    padding: 13px 28px;
+
+    background: rgba(255,79,163,.95);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 8px 30px rgba(255,79,163,.45),
+        0 0 20px rgba(255,79,163,.25);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    transition: .3s ease;
+}
+
+#oneMoreBtn:hover {
+    transform: translateX(-50%) scale(1.06);
+
+    box-shadow:
+        0 0 30px rgba(255,79,163,.7),
+        0 10px 35px rgba(255,79,163,.45);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #birthdayReveal {
+        align-items: flex-start;
+
+        padding:
+            28px 12px 95px;
+    }
+
+    .birthdayContent {
+        max-width: 100%;
+        padding-bottom: 70px;
+    }
+
+    .tinyStars {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .birthdaySmall {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .birthdayContent h1 {
+        font-size: clamp(30px, 9vw, 48px);
+        letter-spacing: 2px;
+    }
+
+    .birthdayContent h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .birthdayImageBox {
+        margin: 14px auto;
+    }
+
+    .birthday-surprise-image {
+        width: 94%;
+
+        border-radius: 18px;
+    }
+
+    .pictureLine {
+        font-size: 15px;
+        line-height: 1.6;
+
+        margin:
+            12px auto 15px;
+    }
+
+    #birthdayMessage {
+        min-height: 85px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+
+        padding:
+            0 8px;
+    }
+
+    #oneMoreBtn {
+        bottom: 14px;
+
+        min-width: 200px;
+
+        padding:
+            12px 24px;
+
+        font-size: 15px;
+    }
+
+}
