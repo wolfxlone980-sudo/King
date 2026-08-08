@@ -440,7 +440,7 @@ button:hover{
 #nextChapterBtn{
     display:none;
 
-    position:fixed;
+    position:absolute;
 
     left:50%;
 
