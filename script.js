@@ -612,6 +612,7 @@ function openFinalSurprise() {
     document
         .getElementById("birthdayReveal")
         .classList.remove("hidden");
+   cinematicEnter("birthdayReveal");
 
     document
         .getElementById("birthdayReveal")
