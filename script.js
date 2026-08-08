@@ -33,7 +33,22 @@ function hideAllPages() {
     });
 
 }
+/* =========================
+   CINEMATIC PAGE ENTER
+========================= */
 
+function cinematicEnter(id) {
+
+    const page = document.getElementById(id);
+
+    if (!page) return;
+
+    page.classList.remove("cinematic-enter");
+
+    void page.offsetWidth;
+
+    page.classList.add("cinematic-enter");
+}
 
 /* =========================
    WELCOME → PASSWORD
